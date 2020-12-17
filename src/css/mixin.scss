@@ -19,7 +19,21 @@ $sans: "Open Sans", sans-serif;
   0% {
     left: 0;
   }
-  100% {
+  50% {
     left: -100rem;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotateX(-22deg) rotateY(-38deg) rotateZ(0deg);
+  }
+  50% {
+    transform: rotateX(22deg) rotateY(-60deg) rotateZ(-10deg);
+  }
+  100% {
+    transform: rotateX(-22deg) rotateY(-38deg) rotateZ(0deg);
   }
 }

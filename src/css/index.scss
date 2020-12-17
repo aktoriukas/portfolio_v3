@@ -26,6 +26,20 @@
 
   --cube-size: 412px;
 }
+* {
+  // cursor: none;
+}
+#cursor {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--red-orange);
+  border-radius: 50%;
+  pointer-events: auto;
+  z-index: 9999999;
+
+  // backdrop-filter: grayscale();
+}
 
 // BASICS ===================
 html,
@@ -36,6 +50,9 @@ body,
   width: 100%;
   height: 100%;
   font-size: 16px;
+}
+body {
+  overflow-x: hidden;
 }
 ul,
 ol,
@@ -71,7 +88,7 @@ h5 {
   position: absolute;
   font-size: var(--font-xxxx-large);
   width: 1000%;
-  top: 5rem;
+  top: 50rem;
   left: 0;
   font-weight: $semi-bold;
   z-index: 1;
@@ -94,7 +111,6 @@ body {
         color: var(--red-orange);
         font-size: var(--font-xx-large);
         position: relative;
-        margin-top: 20rem;
       }
     }
   }
@@ -126,6 +142,8 @@ body {
       background-color: var(--x-dark-teal);
       .container {
         padding: 10rem 0;
+        position: relative;
+        overflow: hidden;
         .intro {
           max-width: var(--width-small);
           margin: 0 auto 10rem;
@@ -146,7 +164,6 @@ body {
           margin: auto;
           display: flex;
           flex-direction: row;
-          overflow: hidden;
           .personal {
             flex: 0 0 50%;
             position: relative;
@@ -186,6 +203,18 @@ body {
               li {
                 margin: 0.5rem 0;
                 font-size: var(--font-regular);
+                padding-left: 1rem;
+                position: relative;
+                &:before {
+                  content: "";
+                  width: 5px;
+                  height: 5px;
+                  background-color: var(--red-orange);
+                  position: absolute;
+                  left: 0;
+                  top: 15px;
+                  animation: rotate 10s infinite;
+                }
               }
             }
           }

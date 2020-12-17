@@ -14,6 +14,7 @@ export default class About extends Component {
         return (
             <section className='about'>
                 <div className='container'>
+                <h1 className='name-background'>Gediminas Strumila</h1>
                     <div className='intro'>
                         <h4>{Database.introduction}</h4>
                         <p>
@@ -25,7 +26,6 @@ export default class About extends Component {
                             <div className='image'>
                                 <img src={photo}></img>
                             </div>
-                            <h1 className='name-background'>Gediminas Strumila</h1>
                             {/* <Social /> */}
                         </div>
                         <div className='spec'>

@@ -23,6 +23,12 @@ import React, { Component } from 'react'
   };
   componentDidMount () {
       window.addEventListener('scroll', this.handleScroll);
+      window.addEventListener("mousemove", this.animation);
+  }
+  animation (e) {
+    let cursor = document.querySelector('#cursor');
+    cursor.style.top = e.pageY - 10 + "px";
+    cursor.style.left = e.pageX - 15 + "px";
   }
   handleScroll() {
       let body = document.getElementById('body');
@@ -40,6 +46,7 @@ import React, { Component } from 'react'
         <Header />
         <Body 
         />
+        <span id='cursor'></span>
       </div>
     )
   }
