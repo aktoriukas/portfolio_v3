@@ -1,0 +1,25 @@
+// WEIGHT ============================
+
+$super-bold: 800;
+$bold: 600;
+$semi-bold: 500;
+$regular: 400;
+$light: 300;
+$very-light: 200;
+$super-light: 100;
+
+// FONT ===============================
+
+$montserrat: "Montserrat", sans-serif;
+$sans: "Open Sans", sans-serif;
+
+// ANIMATION ===========================
+
+@keyframes nameAnimation {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100rem;
+  }
+}

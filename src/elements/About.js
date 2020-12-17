@@ -1,0 +1,39 @@
+import React, { Component } from 'react';
+import photo from '../image/me_bw.jpg';
+// import Svg from '../data/Svg';
+import Database from '../data/Database';
+import Social from './Social';
+import Skills from './Skills';
+
+export default class About extends Component {
+    constructor(props) {
+        super(props)
+    
+    }
+    render() {
+        return (
+            <section className='about'>
+                <div className='container'>
+                    <div className='intro'>
+                        <h4>{Database.introduction}</h4>
+                        <p>
+                        {Database.about}
+                    </p>
+                    </div>
+                    <div className='stats'>
+                        <div className='personal'>
+                            <div className='image'>
+                                <img src={photo}></img>
+                            </div>
+                            <h1 className='name-background'>Gediminas Strumila</h1>
+                            {/* <Social /> */}
+                        </div>
+                        <div className='spec'>
+                            <Skills />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        )
+    }
+}
