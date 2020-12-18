@@ -8,12 +8,12 @@ export default class Header extends Component {
                 <Cube />
                 <ul className='menu'>
                     <li>
-                        <a>
+                        <a href='#about'>
                             about
                         </a>
                     </li>
                     <li>
-                        <a>
+                        <a href='#projects'>
                             projects
                         </a>
                     </li>

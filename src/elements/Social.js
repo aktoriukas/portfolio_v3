@@ -4,11 +4,13 @@ import Database from '../data/Database';
 export default class Social extends Component {
     render() {
         return (
-            <ul>
+            <ul className='social-media'>
                 {Database.socialMedia.map((media) => (
-                    <a key={media.id} href={media.url} rel='noopener noreferrer' target='_blank'>
+                    <li key={media.id}>
+                    <a  href={media.url} rel='noopener noreferrer' target='_blank'>
                         <img alt={media.title} className='logo' src={media.logo}></img>
                     </a>
+                    </li>
                 ))}
             </ul>
 

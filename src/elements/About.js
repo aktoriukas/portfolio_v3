@@ -2,17 +2,13 @@ import React, { Component } from 'react';
 import photo from '../image/me_bw.jpg';
 // import Svg from '../data/Svg';
 import Database from '../data/Database';
-import Social from './Social';
+// import Social from './Social';
 import Skills from './Skills';
 
 export default class About extends Component {
-    constructor(props) {
-        super(props)
-    
-    }
     render() {
         return (
-            <section className='about'>
+            <section id='about'>
                 <div className='container'>
                 <h1 className='name-background'>Gediminas Strumila</h1>
                     <div className='intro'>
@@ -24,7 +20,7 @@ export default class About extends Component {
                     <div className='stats'>
                         <div className='personal'>
                             <div className='image'>
-                                <img src={photo}></img>
+                                <img src={photo} alt='G.S'></img>
                             </div>
                             {/* <Social /> */}
                         </div>

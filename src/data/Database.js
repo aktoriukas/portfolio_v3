@@ -8,32 +8,36 @@ class Database  {
     get projects () {
         return [
             {
-                id: 8,
+                id: 7,
                 title: 'Transformers 2020',
                 ref: 'transformers',
-                info: 'Implement design for whole website / Sass / Drupal / Twig / Mobile',
-                url: 'https://isdb-transformers.org/'
-            },
-            {
-                id: 7,
-                title: 'On the edge',
-                ref: 'edge',
-                info: 'Implement design for whole website / VanillaJS / Sass / Twig / Mobile',
-                url: false
+                info: 'Implement design for whole website',
+                url: 'https://isdb-transformers.org/',
+                stack: ['Sass', 'Drupal', 'Twig', 'VanillaJS']
             },
             {
                 id: 6,
-                title: 'rota_me',
-                ref: 'rotaMe',
-                info: 'Rota template application / React / Sass',
-                url: false
+                title: 'On the edge',
+                ref: 'edge',
+                info: 'Implement design for whole website',
+                url: false,
+                stack: ['Sass', 'Twig', 'VanillaJS', 'Sanity']
             },
             {
                 id: 5,
+                title: 'rota_me',
+                ref: 'rotaMe',
+                info: 'Rota template application',
+                url: false,
+                stack: ['React', 'Sass']
+            },
+            {
+                id: 4,
                 title: 'Jedmap',
                 ref: 'jedmap',
                 info: 'Ipad application / React / Sass ',
-                url: false
+                url: false,
+                stack: ['React', 'Sass']
             },
             // {
             //     id: 2,
@@ -46,22 +50,26 @@ class Database  {
                 id: 3,
                 title: 'Brand Guidlines',
                 ref: 'guidlines',
-                info: 'Collection of Elements / Sass / VanillaJS / Twig',
-                url: false
+                info: 'Collection of Elements',
+                url: false,
+                stack: ['Sass', 'VanillaJS', 'Twig']
             },
             {
                 id: 2,
                 title: 'Invest African Guide',
                 ref: 'invest',
-                info: 'Redesigning from the ground up / Sass / Html / Mobile',
-                url: 'https://investmentguide.africa/'
+                info: 'Redesigning from the ground up',
+                url: 'https://investmentguide.africa/',
+                stack: ['Sass', 'VanillaJS']
             },
             {
                 id: 1,
                 title: 'Drops bar',
                 ref: 'drops',
-                info: 'Static bar website / Html / Css',
-                url: false
+                info: 'Static bar website',
+                // url: false,
+                url: 'https://investmentguide.africa/',
+                stack: ['Html', 'Css']
             }
         ];
     }

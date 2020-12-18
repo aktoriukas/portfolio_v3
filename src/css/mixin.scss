@@ -8,6 +8,13 @@ $light: 300;
 $very-light: 200;
 $super-light: 100;
 
+// SHADOW =============================
+
+$shadow-big: 10px 10px 0 var(--clear-white);
+$shadow-big-red: 10px 10px 0 var(--red-orange-clear);
+$shadow-small: 6px 6px 0 var(--clear-white);
+$shadow-small-in: 0px 0px 10px var(--clear-white);
+
 // FONT ===============================
 
 $montserrat: "Montserrat", sans-serif;
@@ -35,5 +42,53 @@ $sans: "Open Sans", sans-serif;
   }
   100% {
     transform: rotateX(-22deg) rotateY(-38deg) rotateZ(0deg);
+  }
+}
+@keyframes pressMe {
+  0% {
+    box-shadow: $shadow-small;
+  }
+  5% {
+    box-shadow: $shadow-small-in;
+  }
+  6% {
+    box-shadow: $shadow-small;
+  }
+  100% {
+    box-shadow: $shadow-small;
+  }
+}
+@keyframes stack-1 {
+  0% {
+    top: 0px;
+  }
+  45% {
+    top: 0px;
+  }
+  50% {
+    top: 5px;
+  }
+  55% {
+    top: 0px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+@keyframes stack-3 {
+  0% {
+    top: 10px;
+  }
+  45% {
+    top: 10px;
+  }
+  50% {
+    top: 5px;
+  }
+  54% {
+    top: 10px;
+  }
+  100% {
+    top: 10px;
   }
 }

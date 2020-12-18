@@ -16,7 +16,7 @@ import React, { Component } from 'react'
   }
   isInViewport = function (elem) {
 
-      var bounding = elem.getBoundingClientRect();
+      let bounding = elem.getBoundingClientRect();
       return (
           bounding.top < 500
       );

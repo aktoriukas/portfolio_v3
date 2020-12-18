@@ -5,6 +5,7 @@
 
 :root {
   --red-orange: #ff4838;
+  --red-orange-clear: #ff493841;
   --dark-teal: #162b32;
   --x-dark-teal: #152328;
   --white: #ffffff;
@@ -31,12 +32,12 @@
 }
 #cursor {
   position: absolute;
-  width: 30px;
-  height: 30px;
-  border: 2px solid var(--red-orange);
-  border-radius: 50%;
-  pointer-events: auto;
-  z-index: 9999999;
+  // width: 30px;
+  // height: 30px;
+  // border: 2px solid var(--red-orange);
+  // border-radius: 50%;
+  // pointer-events: auto;
+  // z-index: 9999999;
 
   // backdrop-filter: grayscale();
 }
@@ -138,7 +139,7 @@ body {
     }
   }
   #body {
-    .about {
+    #about {
       background-color: var(--x-dark-teal);
       .container {
         padding: 10rem 0;
@@ -151,7 +152,7 @@ body {
           background-color: var(--red-orange);
           color: var(--off-white);
           padding: 2rem 4rem;
-          box-shadow: 10px 10px 0 var(--clear-white);
+          box-shadow: $shadow-big;
           h4 {
             color: var(--x-dark-teal);
             font-size: var(--font-large);
@@ -218,6 +219,140 @@ body {
               }
             }
           }
+        }
+      }
+    }
+    #projects {
+      --card-width: 300px;
+      --card-height: 400px;
+      background-color: var(--dark-teal);
+      padding: 5rem 1rem;
+      .projects-list {
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        margin: auto;
+        height: calc(var(--card-height) * 1.5);
+        position: relative;
+        .card {
+          background-color: var(--x-dark-teal);
+          padding: 2rem 4rem;
+          margin: 0 1rem;
+          max-width: var(--card-width);
+          max-height: var(--card-height);
+          top: calc(var(--card-height) - 50%);
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          margin: auto;
+          z-index: 500;
+          box-shadow: $shadow-big-red;
+          .title {
+            font-size: var(--font-large);
+            text-decoration: underline;
+            color: var(--red-orange);
+            margin-bottom: 2rem;
+          }
+          .stack {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+            .stack-icon {
+              span {
+                content: "";
+                width: 20px;
+                height: 20px;
+                background-color: var(--red-orange);
+                position: absolute;
+                left: 0;
+                top: 0;
+                transform-style: preserve-3d;
+                transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);
+                border: 1px solid var(--dark-teal);
+                z-index: 3;
+                transition: all 2s cubic-bezier(0, -10, 1, 10);
+                animation: stack-1 10s infinite;
+
+                &:nth-child(2) {
+                  top: 5px;
+                  z-index: 2;
+                  animation: none;
+                }
+                &:nth-child(3) {
+                  top: 10px;
+                  z-index: 1;
+                  animation: stack-3 10s infinite;
+                }
+              }
+            }
+            li {
+              color: var(--off-white);
+              display: inline;
+              font-size: var(--font-regular);
+              padding-left: 0.5rem;
+              &:after {
+                content: ",";
+              }
+              &:last-child:after {
+                content: "";
+              }
+            }
+          }
+          .about-project {
+            font-size: var(--font-regular);
+            color: var(--off-white);
+          }
+        }
+      }
+    }
+    #footer {
+      height: 25rem;
+      background-color: var(--x-dark-teal);
+      .triangle {
+        background-color: var(--dark-teal);
+        width: 100%;
+        height: 10rem;
+        clip-path: polygon(50% 100%, 0 0, 100% 0);
+      }
+      .social-media {
+        display: flex;
+        justify-content: center;
+        padding-top: 5rem;
+        li {
+          margin: 0 2rem;
+          padding: 0.4rem 0.4rem 0.4rem;
+          background-color: var(--red-orange);
+          width: 2rem;
+          height: 2rem;
+          box-shadow: $shadow-small;
+          transition: all 0.5s ease;
+          &:hover {
+            box-shadow: $shadow-small-in;
+            a img {
+              opacity: 0.5;
+            }
+          }
+          a {
+            img {
+              width: 2rem;
+              position: absolute;
+              transition: opacity 0.5s ease;
+            }
+          }
+        }
+      }
+      .footnote {
+        color: var(--off-white);
+        text-align: center;
+        width: 100%;
+        padding-top: 4rem;
+        font-size: var(--font-small);
+        font-family: $montserrat;
+        strong {
+          padding-left: 0.5rem;
+          color: var(--red-orange);
         }
       }
     }

@@ -12,6 +12,37 @@
     transform: rotateX(22deg) rotateY(-60deg) rotateZ(-10deg); }
   100% {
     transform: rotateX(-22deg) rotateY(-38deg) rotateZ(0deg); } }
+@keyframes pressMe {
+  0% {
+    box-shadow: 6px 6px 0 var(--clear-white); }
+  5% {
+    box-shadow: 0px 0px 10px var(--clear-white); }
+  6% {
+    box-shadow: 6px 6px 0 var(--clear-white); }
+  100% {
+    box-shadow: 6px 6px 0 var(--clear-white); } }
+@keyframes stack-1 {
+  0% {
+    top: 0px; }
+  45% {
+    top: 0px; }
+  50% {
+    top: 5px; }
+  55% {
+    top: 0px; }
+  100% {
+    top: 0px; } }
+@keyframes stack-3 {
+  0% {
+    top: 10px; }
+  45% {
+    top: 10px; }
+  50% {
+    top: 5px; }
+  54% {
+    top: 10px; }
+  100% {
+    top: 10px; } }
 .wrapD3Cube {
   display: flex;
   flex-direction: row;
@@ -117,6 +148,7 @@
     transform: rotateX(-22deg) rotateY(-38deg) rotateZ(0deg); } }
 :root {
   --red-orange: #ff4838;
+  --red-orange-clear: #ff493841;
   --dark-teal: #162b32;
   --x-dark-teal: #152328;
   --white: #ffffff;
@@ -136,13 +168,7 @@
   --cube-size: 412px; }
 
 #cursor {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  border: 2px solid var(--red-orange);
-  border-radius: 50%;
-  pointer-events: auto;
-  z-index: 9999999; }
+  position: absolute; }
 
 html,
 body,
@@ -230,13 +256,13 @@ body #header {
       justify-content: center; }
       body #header .menu li a {
         color: var(--white); }
-body #body .about {
+body #body #about {
   background-color: var(--x-dark-teal); }
-  body #body .about .container {
+  body #body #about .container {
     padding: 10rem 0;
     position: relative;
     overflow: hidden; }
-    body #body .about .container .intro {
+    body #body #about .container .intro {
       max-width: var(--width-small);
       margin: 0 auto 10rem;
       font-size: var(--font-regular);
@@ -244,52 +270,52 @@ body #body .about {
       color: var(--off-white);
       padding: 2rem 4rem;
       box-shadow: 10px 10px 0 var(--clear-white); }
-      body #body .about .container .intro h4 {
+      body #body #about .container .intro h4 {
         color: var(--x-dark-teal);
         font-size: var(--font-large);
         margin-bottom: 2rem;
         text-decoration: underline; }
-    body #body .about .container .stats {
+    body #body #about .container .stats {
       max-width: var(--width-x-large);
       margin: auto;
       display: flex;
       flex-direction: row; }
-      body #body .about .container .stats .personal {
+      body #body #about .container .stats .personal {
         flex: 0 0 50%;
         position: relative;
         display: flex; }
-        body #body .about .container .stats .personal .image {
+        body #body #about .container .stats .personal .image {
           max-width: 20rem;
           overflow: hidden;
           border-radius: 2rem;
           margin: auto;
           z-index: 2; }
-          body #body .about .container .stats .personal .image img {
+          body #body #about .container .stats .personal .image img {
             width: 100%; }
-      body #body .about .container .stats .spec {
+      body #body #about .container .stats .spec {
         flex: 0 0 50%; }
-        body #body .about .container .stats .spec .skills {
+        body #body #about .container .stats .spec .skills {
           display: grid;
           grid-template-columns: 1fr 1fr;
           position: relative;
           z-index: 2; }
-        body #body .about .container .stats .spec .skill {
+        body #body #about .container .stats .spec .skill {
           flex: 0 0 40%;
           background-color: var(--dark-teal);
           color: var(--white);
           margin: 2rem;
           padding: 2rem;
           border-radius: 2rem; }
-          body #body .about .container .stats .spec .skill h3 {
+          body #body #about .container .stats .spec .skill h3 {
             color: var(--red-orange);
             margin-bottom: 1rem;
             font-size: var(--font-medium); }
-          body #body .about .container .stats .spec .skill li {
+          body #body #about .container .stats .spec .skill li {
             margin: 0.5rem 0;
             font-size: var(--font-regular);
             padding-left: 1rem;
             position: relative; }
-            body #body .about .container .stats .spec .skill li:before {
+            body #body #about .container .stats .spec .skill li:before {
               content: "";
               width: 5px;
               height: 5px;
@@ -298,5 +324,113 @@ body #body .about {
               left: 0;
               top: 15px;
               animation: rotate 10s infinite; }
+body #body #projects {
+  --card-width: 300px;
+  --card-height: 400px;
+  background-color: var(--dark-teal);
+  padding: 5rem 1rem; }
+  body #body #projects .projects-list {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    margin: auto;
+    height: calc(var(--card-height) * 1.5);
+    position: relative; }
+    body #body #projects .projects-list .card {
+      background-color: var(--x-dark-teal);
+      padding: 2rem 4rem;
+      margin: 0 1rem;
+      max-width: var(--card-width);
+      max-height: var(--card-height);
+      top: calc(var(--card-height) - 50%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      z-index: 500;
+      box-shadow: 10px 10px 0 var(--red-orange-clear); }
+      body #body #projects .projects-list .card .title {
+        font-size: var(--font-large);
+        text-decoration: underline;
+        color: var(--red-orange);
+        margin-bottom: 2rem; }
+      body #body #projects .projects-list .card .stack {
+        position: relative;
+        padding-left: 2rem;
+        margin-bottom: 2rem; }
+        body #body #projects .projects-list .card .stack .stack-icon span {
+          content: "";
+          width: 20px;
+          height: 20px;
+          background-color: var(--red-orange);
+          position: absolute;
+          left: 0;
+          top: 0;
+          transform-style: preserve-3d;
+          transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);
+          border: 1px solid var(--dark-teal);
+          z-index: 3;
+          transition: all 2s cubic-bezier(0, -10, 1, 10);
+          animation: stack-1 10s infinite; }
+          body #body #projects .projects-list .card .stack .stack-icon span:nth-child(2) {
+            top: 5px;
+            z-index: 2;
+            animation: none; }
+          body #body #projects .projects-list .card .stack .stack-icon span:nth-child(3) {
+            top: 10px;
+            z-index: 1;
+            animation: stack-3 10s infinite; }
+        body #body #projects .projects-list .card .stack li {
+          color: var(--off-white);
+          display: inline;
+          font-size: var(--font-regular);
+          padding-left: 0.5rem; }
+          body #body #projects .projects-list .card .stack li:after {
+            content: ","; }
+          body #body #projects .projects-list .card .stack li:last-child:after {
+            content: ""; }
+      body #body #projects .projects-list .card .about-project {
+        font-size: var(--font-regular);
+        color: var(--off-white); }
+body #body #footer {
+  height: 25rem;
+  background-color: var(--x-dark-teal); }
+  body #body #footer .triangle {
+    background-color: var(--dark-teal);
+    width: 100%;
+    height: 10rem;
+    clip-path: polygon(50% 100%, 0 0, 100% 0); }
+  body #body #footer .social-media {
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem; }
+    body #body #footer .social-media li {
+      margin: 0 2rem;
+      padding: 0.4rem 0.4rem 0.4rem;
+      background-color: var(--red-orange);
+      width: 2rem;
+      height: 2rem;
+      box-shadow: 6px 6px 0 var(--clear-white);
+      transition: all 0.5s ease; }
+      body #body #footer .social-media li:hover {
+        box-shadow: 0px 0px 10px var(--clear-white); }
+        body #body #footer .social-media li:hover a img {
+          opacity: 0.5; }
+      body #body #footer .social-media li a img {
+        width: 2rem;
+        position: absolute;
+        transition: opacity 0.5s ease; }
+  body #body #footer .footnote {
+    color: var(--off-white);
+    text-align: center;
+    width: 100%;
+    padding-top: 4rem;
+    font-size: var(--font-small);
+    font-family: "Montserrat", sans-serif; }
+    body #body #footer .footnote strong {
+      padding-left: 0.5rem;
+      color: var(--red-orange); }
 
 /*# sourceMappingURL=index.css.map */

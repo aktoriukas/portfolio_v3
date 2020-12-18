@@ -15,6 +15,7 @@ export default class Skills extends Component {
                     <h3>{skill.title}</h3>
                         <Skill 
                             skill={skill}
+                            key={skill.id}
                         />
                     </li>
                 ))}
