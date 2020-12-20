@@ -5,6 +5,7 @@
 
 :root {
   --red-orange: #ff4838;
+  --red-orange-pale: #ff4938c5;
   --red-orange-clear: #ff493841;
   --dark-teal: #162b32;
   --x-dark-teal: #152328;
@@ -14,8 +15,8 @@
   --color-cube: #ffffff20;
 
   --font-xxxx-large: 400px;
-  --font-x-large: 50px;
   --font-xx-large: 100px;
+  --font-x-large: 50px;
   --font-large: 40px;
   --font-medium: 30px;
   --font-regular: 24px;
@@ -26,6 +27,9 @@
   --width-x-large: 1600px;
 
   --cube-size: 412px;
+  @media (max-width: 991.98px) {
+    --font-xx-large: 50px;
+  }
 }
 * {
   // cursor: none;
@@ -126,14 +130,26 @@ body {
       display: flex;
       flex-direction: row-reverse;
       height: 100%;
+      margin: 0 2rem;
       li {
         height: 100%;
-        width: 80px;
-        display: inherit;
-        flex-direction: column;
-        justify-content: center;
+        transition: all 0.5s ease;
+        padding: 0 2rem;
+        &:hover {
+          background-color: var(--red-orange);
+
+          a {
+            color: var(--dark-teal);
+          }
+        }
         a {
-          color: var(--white);
+          color: var(--color-cube);
+          font-size: var(--font-regular);
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
         }
       }
     }
@@ -149,7 +165,7 @@ body {
           max-width: var(--width-small);
           margin: 0 auto 10rem;
           font-size: (var(--font-regular));
-          background-color: var(--red-orange);
+          background-color: var(--red-orange-pale);
           color: var(--off-white);
           padding: 2rem 4rem;
           box-shadow: $shadow-big;
@@ -165,6 +181,9 @@ body {
           margin: auto;
           display: flex;
           flex-direction: row;
+          @media (max-width: 991.98px) {
+            flex-direction: column;
+          }
           .personal {
             flex: 0 0 50%;
             position: relative;
@@ -184,7 +203,7 @@ body {
             flex: 0 0 50%;
             .skills {
               display: grid;
-              grid-template-columns: 1fr 1fr;
+              grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
               position: relative;
               z-index: 2;
             }
@@ -195,7 +214,9 @@ body {
               margin: 2rem;
               padding: 2rem;
               border-radius: 2rem;
-
+              @media (max-width: 400px) {
+                margin: 2rem auto;
+              }
               h3 {
                 color: var(--red-orange);
                 margin-bottom: 1rem;
@@ -225,84 +246,118 @@ body {
     #projects {
       --card-width: 300px;
       --card-height: 400px;
+      --card-left: -1000px;
+      --card-right: 1000px;
+      --grid-max: 400px;
       background-color: var(--dark-teal);
       padding: 5rem 1rem;
       .projects-list {
-        display: flex;
-        flex-direction: row;
-        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 4rem;
+        grid-column-gap: 4rem;
         margin: auto;
-        height: calc(var(--card-height) * 1.5);
         position: relative;
-        .card {
-          background-color: var(--x-dark-teal);
-          padding: 2rem 4rem;
-          margin: 0 1rem;
-          max-width: var(--card-width);
-          max-height: var(--card-height);
-          top: calc(var(--card-height) - 50%);
-          position: absolute;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          right: 0;
+        @media (min-width: 991.98px) {
+          grid-template-columns: repeat(auto-fit, minmax(var(--grid-max), 1fr));
+        }
+        .card-background {
+          background: red;
           margin: auto;
-          z-index: 500;
-          box-shadow: $shadow-big-red;
-          .title {
-            font-size: var(--font-large);
-            text-decoration: underline;
-            color: var(--red-orange);
-            margin-bottom: 2rem;
+          max-width: calc(var(--card-width) + 7.9rem);
+          max-height: calc(var(--card-height) + 3.9rem);
+          @media (max-width: 400px) {
+            height: unset;
+            width: unset;
           }
-          .stack {
+          .card {
             position: relative;
-            padding-left: 2rem;
-            margin-bottom: 2rem;
-            .stack-icon {
-              span {
-                content: "";
-                width: 20px;
-                height: 20px;
-                background-color: var(--red-orange);
+            top: 0;
+            left: 0;
+            background-color: var(--x-dark-teal);
+            padding: 2rem 4rem;
+            width: var(--card-width);
+            height: var(--card-height);
+            z-index: 500;
+            transition: all 0.5s ease;
+            @media (max-width: 991.98px) {
+              padding: 2rem 2rem;
+            }
+            @media (max-width: 400px) {
+              height: unset;
+              width: unset;
+            }
+            &:hover {
+              top: -1rem;
+              left: 1rem;
+            }
+            .title {
+              font-size: var(--font-large);
+              text-decoration: underline;
+              color: var(--red-orange);
+              margin-bottom: 2rem;
+            }
+            .stack {
+              position: relative;
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+              padding-left: 2rem;
+              margin-bottom: 2rem;
+              .stack-icon {
+                span {
+                  content: "";
+                  width: 20px;
+                  height: 20px;
+                  background-color: var(--red-orange);
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                  transform-style: preserve-3d;
+                  transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);
+                  border: 1px solid var(--dark-teal);
+                  z-index: 3;
+                  transition: all 2s cubic-bezier(0, -10, 1, 10);
+                  animation: stack-1 10s infinite;
+
+                  &:nth-child(2) {
+                    top: 5px;
+                    z-index: 2;
+                    animation: none;
+                  }
+                  &:nth-child(3) {
+                    top: 10px;
+                    z-index: 1;
+                    animation: stack-3 10s infinite;
+                  }
+                }
+              }
+              li {
+                color: var(--off-white);
+                display: inline;
+                font-size: var(--font-regular);
+                padding-left: 0.5rem;
+                &:after {
+                  content: ",";
+                }
+                &:last-child:after {
+                  content: "";
+                }
+              }
+            }
+            .about-project {
+              font-size: var(--font-regular);
+              color: var(--off-white);
+            }
+            .website {
+              a {
                 position: absolute;
+                width: 100%;
+                height: 100%;
                 left: 0;
                 top: 0;
-                transform-style: preserve-3d;
-                transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);
-                border: 1px solid var(--dark-teal);
-                z-index: 3;
-                transition: all 2s cubic-bezier(0, -10, 1, 10);
-                animation: stack-1 10s infinite;
-
-                &:nth-child(2) {
-                  top: 5px;
-                  z-index: 2;
-                  animation: none;
-                }
-                &:nth-child(3) {
-                  top: 10px;
-                  z-index: 1;
-                  animation: stack-3 10s infinite;
-                }
               }
             }
-            li {
-              color: var(--off-white);
-              display: inline;
-              font-size: var(--font-regular);
-              padding-left: 0.5rem;
-              &:after {
-                content: ",";
-              }
-              &:last-child:after {
-                content: "";
-              }
-            }
-          }
-          .about-project {
-            font-size: var(--font-regular);
-            color: var(--off-white);
           }
         }
       }
@@ -331,7 +386,7 @@ body {
           &:hover {
             box-shadow: $shadow-small-in;
             a img {
-              opacity: 0.5;
+              opacity: 0.8;
             }
           }
           a {

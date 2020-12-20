@@ -11,7 +11,7 @@ class Database  {
                 id: 7,
                 title: 'Transformers 2020',
                 ref: 'transformers',
-                info: 'Implement design for whole website',
+                info: 'Website for yearly Transformers academy who went completely virtual this year.',
                 url: 'https://isdb-transformers.org/',
                 stack: ['Sass', 'Drupal', 'Twig', 'VanillaJS']
             },
@@ -19,7 +19,7 @@ class Database  {
                 id: 6,
                 title: 'On the edge',
                 ref: 'edge',
-                info: 'Implement design for whole website',
+                info: 'Completely new design for the whole website with new features and format.',
                 url: false,
                 stack: ['Sass', 'Twig', 'VanillaJS', 'Sanity']
             },
@@ -27,7 +27,7 @@ class Database  {
                 id: 5,
                 title: 'rota_me',
                 ref: 'rotaMe',
-                info: 'Rota template application',
+                info: 'Schedule tracking and designing program.With the support of modern features. For anyone who needs an easy way to schedule shifts. ',
                 url: false,
                 stack: ['React', 'Sass']
             },
@@ -35,7 +35,7 @@ class Database  {
                 id: 4,
                 title: 'Jedmap',
                 ref: 'jedmap',
-                info: 'Ipad application / React / Sass ',
+                info: 'Controller/application to select and manipulate map in IsDB office.',
                 url: false,
                 stack: ['React', 'Sass']
             },
@@ -50,7 +50,7 @@ class Database  {
                 id: 3,
                 title: 'Brand Guidlines',
                 ref: 'guidlines',
-                info: 'Collection of Elements',
+                info: 'Libary of elements from various company websites for any future projects.',
                 url: false,
                 stack: ['Sass', 'VanillaJS', 'Twig']
             },
@@ -58,7 +58,7 @@ class Database  {
                 id: 2,
                 title: 'Invest African Guide',
                 ref: 'invest',
-                info: 'Redesigning from the ground up',
+                info: 'Complete redesign of the whole website. Investment guidelines.',
                 url: 'https://investmentguide.africa/',
                 stack: ['Sass', 'VanillaJS']
             },
@@ -66,9 +66,8 @@ class Database  {
                 id: 1,
                 title: 'Drops bar',
                 ref: 'drops',
-                info: 'Static bar website',
-                // url: false,
-                url: 'https://investmentguide.africa/',
+                info: 'Website for local restaurant/bar in Vilnius.',
+                url: false,
                 stack: ['Html', 'Css']
             }
         ];
