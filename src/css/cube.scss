@@ -11,6 +11,9 @@
   right: 0;
   transition: all 2s ease;
   height: fit-content;
+  @media (max-width: 500px) {
+    top: 30rem;
+  }
 }
 #header {
   .wrapD3Cube {

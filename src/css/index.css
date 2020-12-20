@@ -66,6 +66,9 @@
   right: 0;
   transition: all 2s ease;
   height: fit-content; }
+  @media (max-width: 500px) {
+    .wrapD3Cube {
+      top: 30rem; } }
 
 #header .wrapD3Cube {
   --cube-size: 30px;
@@ -179,6 +182,9 @@
   @media (max-width: 991.98px) {
     :root {
       --font-xx-large: 50px; } }
+  @media (max-width: 500px) {
+    :root {
+      --cube-size: 100px; } }
 
 * {
   cursor: none; }
@@ -249,6 +255,9 @@ h5 {
   font-weight: 500;
   z-index: 1;
   color: var(--clear-white); }
+  @media (max-width: 500px) {
+    .name-background {
+      top: 80rem; } }
 
 .scrolled .name-background {
   animation: nameAnimation 180s infinite; }

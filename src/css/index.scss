@@ -30,6 +30,9 @@
   @media (max-width: 991.98px) {
     --font-xx-large: 50px;
   }
+  @media (max-width: 500px) {
+    --cube-size: 100px;
+  }
 }
 * {
   cursor: none;
@@ -104,6 +107,9 @@ h5 {
   font-weight: $semi-bold;
   z-index: 1;
   color: var(--clear-white);
+  @media (max-width: 500px) {
+    top: 80rem;
+  }
 }
 .scrolled .name-background {
   animation: nameAnimation 180s infinite;
