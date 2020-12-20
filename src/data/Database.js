@@ -66,7 +66,7 @@ class Database  {
                 id: 1,
                 title: 'Drops bar',
                 ref: 'drops',
-                info: 'Website for local restaurant/bar in Vilnius.',
+                info: 'Website for local restaurant/bar.',
                 url: false,
                 stack: ['Html', 'Css']
             }
