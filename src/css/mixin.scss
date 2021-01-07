@@ -20,6 +20,10 @@ $shadow-small-in: 0px 0px 10px var(--clear-white);
 $montserrat: "Montserrat", sans-serif;
 $sans: "Open Sans", sans-serif;
 
+// SIZE ===============================
+
+$spin: 5px;
+
 // MIXIN ==============================
 
 @mixin alignMiddle {
@@ -102,6 +106,47 @@ $sans: "Open Sans", sans-serif;
     top: 10px;
   }
 }
+@keyframes slide-down {
+  0% {
+    top: -150%;
+  }
+  100% {
+    top: 150%;
+  }
+}
+@keyframes slide-left {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 150%;
+  }
+}
+@keyframes slide-right {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+@keyframes slide-up {
+  0% {
+    bottom: -150%;
+  }
+  100% {
+    bottom: 150%;
+  }
+}
+@keyframes cubeUp {
+  0% {
+    bottom: -30%;
+  }
+  100% {
+    bottom: 130%;
+    transform: rotate(90deg);
+  }
+}
 @keyframes cursor-rotate {
   0% {
     border-radius: 50%;
@@ -110,6 +155,7 @@ $sans: "Open Sans", sans-serif;
   50% {
     border-radius: 0;
     transform: rotateX(0deg) rotateY(0deg) rotateZ(180deg);
+    border: 3px solid var(--off-white);
   }
   100% {
     border-radius: 50%;

@@ -8,6 +8,7 @@
   --red-orange-pale: #ff4938c5;
   --red-orange-clear: #ff493841;
   --dark-teal: #162b32;
+  --dark-teal-clear: rgba(22, 43, 50, 0.95);
   --x-dark-teal: #152328;
   --white: #ffffff;
   --off-white: #eeeeee;
@@ -19,7 +20,7 @@
   --font-x-large: 50px;
   --font-large: 40px;
   --font-medium: 30px;
-  --font-regular: 24px;
+  --font-regular: 22px;
   --font-small: 18px;
 
   --width-small: 500px;
@@ -29,32 +30,33 @@
   --cube-size: 412px;
   @media (max-width: 991.98px) {
     --font-xx-large: 50px;
+    --cube-size: 200px;
   }
   @media (max-width: 500px) {
     --cube-size: 100px;
   }
 }
 * {
-  cursor: none;
+  // cursor: none;
+  scroll-behavior: smooth;
 }
-#cursor {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border: 3px solid var(--red-orange);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 99999999999;
-  transition: all 0s ease;
-  touch-action: none;
-  &.over {
-    background: var(--dark-teal);
-    animation: cursor-rotate 1.5s infinite;
-  }
-  @media (max-width: 500px) {
-    display: none;
-  }
-}
+// #cursor {
+//   position: absolute;
+//   width: 20px;
+//   height: 20px;
+//   border: 3px solid var(--red-orange);
+//   border-radius: 50%;
+//   pointer-events: none;
+//   z-index: 99999999999;
+//   transition: all 0s ease;
+//   touch-action: none;
+//   &.over {
+//     animation: cursor-rotate 1.5s infinite;
+//   }
+//   @media (max-width: 500px) {
+//     display: none;
+//   }
+// }
 
 // BASICS ===================
 html,
@@ -98,6 +100,9 @@ h5 {
   margin: 0;
   padding: 0;
 }
+.App {
+  background-color: var(--dark-teal);
+}
 .name-background {
   position: absolute;
   font-size: var(--font-xxxx-large);
@@ -111,9 +116,29 @@ h5 {
     top: 80rem;
   }
 }
-.scrolled .name-background {
+.name-background {
   animation: nameAnimation 180s infinite;
 }
+::-webkit-scrollbar {
+  width: 40px;
+}
+::-webkit-scrollbar-track {
+  background-color: #162b32;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 30px;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(var(--red-orange-pale)),
+    to(var(--red-orange))
+  );
+  box-shadow: inset 2px 2px 2px var(--clear-white),
+    inset -2px -2px 2px var(--dark-teal-clear);
+}
+
 body {
   #welcome-screen {
     width: 100%;
@@ -124,10 +149,81 @@ body {
     background: var(--dark-teal);
     .about {
       margin: auto;
+      #header-container {
+        position: relative;
+        overflow: hidden;
+        padding: 1rem;
+        span {
+          position: absolute;
+          background-color: var(--x-dark-teal);
+        }
+        .left {
+          left: 0;
+          top: -150%;
+          width: $spin;
+          height: 100%;
+          animation: 5s slide-down infinite;
+          animation-delay: 3.5s;
+        }
+        .top {
+          top: 0;
+          right: -100%;
+          width: 100%;
+          height: $spin;
+          animation: 5s slide-left infinite;
+          animation-delay: 2.5s;
+        }
+        .right {
+          bottom: -150%;
+          right: 0;
+          height: 100%;
+          width: $spin;
+          animation: 5s slide-up infinite;
+          animation-delay: 1s;
+        }
+        .bottom {
+          left: -150%;
+          bottom: 0;
+          width: 100%;
+          height: $spin;
+          animation: 5s slide-right infinite;
+        }
+      }
       h1 {
         color: var(--red-orange);
         font-size: var(--font-xx-large);
         position: relative;
+        z-index: 2;
+      }
+    }
+    #background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: 0;
+      .cube {
+        background: radial-gradient(
+          circle,
+          var(--red-orange-clear) 0%,
+          rgba(255, 255, 255, 0) 130%
+        );
+        position: absolute;
+        bottom: -30%;
+        animation: cubeUp 20s infinite;
+        transition: 3s ease;
+        border: 1px solid var(--color-cube);
+        &:hover {
+          background-color: var(--red-orange-pale);
+          animation-delay: 2s;
+        }
+        .cube-inside {
+          width: 10px;
+          height: 10px;
+          background-color: black;
+        }
       }
     }
   }
@@ -136,7 +232,7 @@ body {
     z-index: 999;
     top: 0;
     width: 100%;
-    background-color: var(--dark-teal);
+    background: var(--dark-teal-clear);
     height: 70px;
     .menu {
       display: flex;
@@ -181,6 +277,9 @@ body {
           color: var(--off-white);
           padding: 2rem 4rem;
           box-shadow: $shadow-big;
+          @media (max-width: 500px) {
+            margin: 0 0.5rem 10rem;
+          }
           h4 {
             color: var(--x-dark-teal);
             font-size: var(--font-large);
@@ -287,7 +386,7 @@ body {
             top: 0;
             left: 0;
             background-color: var(--x-dark-teal);
-            padding: 2rem 4rem;
+            padding: 2rem 3rem;
             width: var(--card-width);
             height: var(--card-height);
             z-index: 500;

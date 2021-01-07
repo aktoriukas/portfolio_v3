@@ -25,11 +25,11 @@ class Database  {
             },
             {
                 id: 5,
-                title: 'rota_me',
+                title: 'rota-me',
                 ref: 'rotaMe',
                 info: 'Schedule tracking and designing program.With the support of modern features. For anyone who needs an easy way to schedule shifts. ',
-                url: false,
-                stack: ['React', 'Sass']
+                url: 'http://aktoriukas.com/rota_me/',
+                stack: ['ReactJS', 'NodeJS', 'Express' , 'SQL' , 'Sass']
             },
             {
                 id: 4,
@@ -37,7 +37,7 @@ class Database  {
                 ref: 'jedmap',
                 info: 'Controller/application to select and manipulate map in IsDB office.',
                 url: false,
-                stack: ['React', 'Sass']
+                stack: ['ReactJS', 'Sass']
             },
             // {
             //     id: 2,
@@ -78,19 +78,19 @@ class Database  {
                 id: 1,
                 title: 'Front end',
                 ref: 'front',
-                info: 'Html / Css / Sass / Vanilla JS / React / Twig',
+                info: 'Html / Sass|Css / Vanilla JS / ReactJS / Twig',
             },
             {
                 id: 2,
                 title: 'Back end',
                 ref: 'back',
-                info: 'PHP / MySQL / Node.js / Sanity / Symphony'
+                info: 'PHP / MySQL / NodeJS / Sanity / Symphony'
             },
             {
                 id: 3,
                 title: 'Design',
                 ref: 'design',
-                info: 'Photoshop / Indesign / Figma / Gravit Designer'
+                info: 'Photoshop / Indesign / Illustrator / Figma / Gravit Designer'
             }
         ]
     }

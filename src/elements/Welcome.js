@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Cube from './Cube';
+import BackgroundSlice from './BackgroundSlice'
 
 
 export default class Welcome extends Component {
@@ -15,10 +16,17 @@ export default class Welcome extends Component {
         return (
             <section id='welcome-screen'>
                 <div className='about'>
-                    <h1>Welcome</h1>
-                    <Cube 
+                    <div id='header-container'>
+                        <h1>Welcome</h1>
+                        <span className='bottom'></span>
+                        <span className='right'></span>
+                        <span className='top'></span>
+                        <span className='left'></span>
+                    </div>
+                    {/* <Cube 
                         scrolled={this.props.scrolled}
-                    />
+                    /> */}
+                    <BackgroundSlice />
                 </div>
             </section>
         )
