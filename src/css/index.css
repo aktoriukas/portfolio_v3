@@ -306,7 +306,8 @@ body #welcome-screen {
       padding: 1rem; }
       body #welcome-screen .about #header-container span {
         position: absolute;
-        background-color: var(--x-dark-teal); }
+        background-color: var(--x-dark-teal);
+        border-radius: 50%; }
       body #welcome-screen .about #header-container .left {
         left: 0;
         top: -150%;
@@ -338,7 +339,8 @@ body #welcome-screen {
       color: var(--red-orange);
       font-size: var(--font-xx-large);
       position: relative;
-      z-index: 2; }
+      z-index: 2;
+      text-shadow: 0 0 3px var(--off-white); }
   body #welcome-screen #background {
     position: absolute;
     width: 100%;

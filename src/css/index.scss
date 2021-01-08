@@ -156,6 +156,7 @@ body {
         span {
           position: absolute;
           background-color: var(--x-dark-teal);
+          border-radius: 50%;
         }
         .left {
           left: 0;
@@ -194,6 +195,7 @@ body {
         font-size: var(--font-xx-large);
         position: relative;
         z-index: 2;
+        text-shadow: 0 0 3px var(--off-white);
       }
     }
     #background {
