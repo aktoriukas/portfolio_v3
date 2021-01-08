@@ -25,7 +25,7 @@ import React, { Component } from 'react'
       );
   };
   componentDidMount () {
-      // window.addEventListener('scroll', this.handleScroll);
+      window.addEventListener('scroll', this.handleScroll);
       // window.addEventListener("mousemove", this.animation);
       // let a = document.querySelectorAll('a');
       // a.forEach(item => (

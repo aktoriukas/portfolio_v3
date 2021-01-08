@@ -84,7 +84,7 @@ class Database  {
                 id: 2,
                 title: 'Back end',
                 ref: 'back',
-                info: 'PHP / MySQL / NodeJS / Sanity / Symphony'
+                info: 'PHP / MySQL / NodeJS / Express / Sanity / Symphony'
             },
             {
                 id: 3,
