@@ -27,7 +27,7 @@ class Database  {
                 id: 5,
                 title: 'rota-me',
                 ref: 'rotaMe',
-                info: 'Schedule tracking and designing program.With the support of modern features. For anyone who needs an easy way to schedule shifts. ',
+                info: 'Schedule tracking application. For anyone who needs an easy way to schedule shifts. ',
                 url: 'http://aktoriukas.com/rota_me/',
                 stack: ['ReactJS', 'NodeJS', 'Express' , 'SQL' , 'Sass']
             },
@@ -35,7 +35,7 @@ class Database  {
                 id: 4,
                 title: 'Jedmap',
                 ref: 'jedmap',
-                info: 'Controller/application to select and manipulate map in IsDB office.',
+                info: 'Application to select and manipulate map in IsDB office.',
                 url: false,
                 stack: ['ReactJS', 'Sass']
             },
@@ -50,7 +50,7 @@ class Database  {
                 id: 3,
                 title: 'Brand Guidlines',
                 ref: 'guidlines',
-                info: 'Libary of elements from various company websites for any future projects.',
+                info: 'Libary of elements from all company websites for any future projects.',
                 url: false,
                 stack: ['Sass', 'VanillaJS', 'Twig']
             },
