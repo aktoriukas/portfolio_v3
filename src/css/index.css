@@ -194,6 +194,7 @@
   --red-orange-clear: #ff493841;
   --dark-teal: #162b32;
   --dark-teal-clear: rgba(22, 43, 50, 0.98);
+  --dark-teal-x-clear: rgba(22, 43, 50, 0.5);
   --x-dark-teal: #152328;
   --white: #ffffff;
   --off-white: #eeeeee;
@@ -233,6 +234,9 @@ body,
 body {
   overflow-x: hidden; }
 
+html {
+  background-color: var(--x-dark-teal); }
+
 ul,
 ol,
 li,
@@ -261,9 +265,6 @@ h5 {
   margin: 0;
   padding: 0; }
 
-.App {
-  background-color: var(--dark-teal); }
-
 .name-background {
   position: absolute;
   font-size: var(--font-xxxx-large);
@@ -284,7 +285,7 @@ h5 {
   width: 40px; }
 
 ::-webkit-scrollbar-track {
-  background-color: #162b32; }
+  background: linear-gradient(90deg, #16272d 0%, var(--dark-teal-clear) 48%, var(--dark-teal-clear) 52%, #16272d 100%); }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 30px;
@@ -297,7 +298,7 @@ body #welcome-screen {
   margin: 0;
   padding: 0;
   display: flex;
-  background: var(--dark-teal); }
+  background: var(--dark-teal-x-clear); }
   body #welcome-screen .about {
     margin: auto; }
     body #welcome-screen .about #header-container {
@@ -351,14 +352,14 @@ body #welcome-screen {
     z-index: 0; }
     body #welcome-screen #background .cube {
       background: radial-gradient(circle, var(--red-orange-clear) 0%, rgba(255, 255, 255, 0) 130%);
+      backdrop-filter: blur(5px);
       position: absolute;
       bottom: -30%;
       animation: cubeUp 20s infinite;
       transition: 3s ease;
       border: 1px solid var(--color-cube); }
       body #welcome-screen #background .cube:hover {
-        background-color: var(--red-orange-pale);
-        animation-delay: 2s; }
+        opacity: 0.5; }
       body #welcome-screen #background .cube .cube-inside {
         width: 10px;
         height: 10px;
@@ -368,7 +369,8 @@ body #header {
   z-index: 999;
   top: 0;
   width: 100%;
-  background: var(--dark-teal-clear);
+  background: var(--dark-teal-x-clear);
+  backdrop-filter: blur(10px);
   height: 70px; }
   body #header .menu {
     display: flex;
@@ -436,20 +438,17 @@ body #body #about {
       body #body #about .container .stats .spec {
         flex: 0 0 50%; }
         body #body #about .container .stats .spec .skills {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+          display: flex;
+          flex-direction: column;
           position: relative;
           z-index: 2; }
         body #body #about .container .stats .spec .skill {
-          flex: 0 0 40%;
           background-color: var(--dark-teal);
           color: var(--white);
           margin: 2rem;
           padding: 2rem;
-          border-radius: 2rem; }
-          @media (max-width: 400px) {
-            body #body #about .container .stats .spec .skill {
-              margin: 2rem auto; } }
+          border-radius: 2rem;
+          max-width: 20rem; }
           body #body #about .container .stats .spec .skill h3 {
             color: var(--red-orange);
             margin-bottom: 1rem;
@@ -474,7 +473,7 @@ body #body #projects {
   --card-left: -1000px;
   --card-right: 1000px;
   --grid-max: 400px;
-  background-color: var(--dark-teal);
+  background: var(--dark-teal-x-clear);
   padding: 5rem 1rem; }
   body #body #projects .projects-list {
     display: grid;
@@ -573,7 +572,7 @@ body #body #footer {
   height: 25rem;
   background-color: var(--x-dark-teal); }
   body #body #footer .triangle {
-    background-color: var(--dark-teal);
+    background: var(--dark-teal-x-clear);
     width: 100%;
     height: 10rem;
     clip-path: polygon(50% 100%, 0 0, 100% 0); }
