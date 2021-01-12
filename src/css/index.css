@@ -276,7 +276,7 @@ h5 {
   color: var(--clear-white); }
   @media (max-width: 500px) {
     .name-background {
-      top: 80rem; } }
+      top: 90rem; } }
 
 .name-background {
   animation: nameAnimation 180s infinite; }
@@ -426,12 +426,31 @@ body #body #about {
       body #body #about .container .stats .personal {
         flex: 0 0 50%;
         position: relative;
-        display: flex; }
+        display: flex;
+        flex-direction: column;
+        justify-content: center; }
+        body #body #about .container .stats .personal .cv {
+          text-align: center;
+          margin: 0 auto;
+          font-size: var(--font-medium);
+          color: var(--red-orange);
+          background-color: var(--red-orange); }
+          body #body #about .container .stats .personal .cv h3 {
+            padding: 0.5rem;
+            position: relative;
+            background-color: var(--x-dark-teal);
+            transition: all 0.5s ease;
+            right: 0;
+            top: 0;
+            z-index: 20; }
+            body #body #about .container .stats .personal .cv h3:hover {
+              right: 5px;
+              top: 5px; }
         body #body #about .container .stats .personal .image {
           max-width: 20rem;
           overflow: hidden;
           border-radius: 2rem;
-          margin: auto;
+          margin: 0 auto;
           z-index: 2; }
           body #body #about .container .stats .personal .image img {
             width: 100%; }

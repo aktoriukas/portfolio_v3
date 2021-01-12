@@ -114,7 +114,7 @@ h5 {
   z-index: 1;
   color: var(--clear-white);
   @media (max-width: 500px) {
-    top: 80rem;
+    top: 90rem;
   }
 }
 .name-background {
@@ -124,7 +124,13 @@ h5 {
   width: 40px;
 }
 ::-webkit-scrollbar-track {
-  background: linear-gradient(90deg, rgba(22,39,45,1) 0%,var(--dark-teal-clear) 48%, var(--dark-teal-clear) 52%, rgba(22,39,45,1) 100%);  
+  background: linear-gradient(
+    90deg,
+    rgba(22, 39, 45, 1) 0%,
+    var(--dark-teal-clear) 48%,
+    var(--dark-teal-clear) 52%,
+    rgba(22, 39, 45, 1) 100%
+  );
 }
 
 ::-webkit-scrollbar-thumb {
@@ -302,11 +308,33 @@ body {
             flex: 0 0 50%;
             position: relative;
             display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .cv {
+              text-align: center;
+              margin: 0 auto;
+              font-size: var(--font-medium);
+              color: var(--red-orange);
+              background-color: var(--red-orange);
+              h3 {
+                padding: 0.5rem;
+                position: relative;
+                background-color: var(--x-dark-teal);
+                transition: all 0.5s ease;
+                right: 0;
+                top: 0;
+                z-index: 20;
+                &:hover {
+                  right: 5px;
+                  top: 5px;
+                }
+              }
+            }
             .image {
               max-width: 20rem;
               overflow: hidden;
               border-radius: 2rem;
-              margin: auto;
+              margin: 0 auto;
               z-index: 2;
               img {
                 width: 100%;

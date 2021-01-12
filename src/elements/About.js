@@ -22,7 +22,9 @@ export default class About extends Component {
                             <div className='image'>
                                 <img src={photo} alt='G.S'></img>
                             </div>
-                            {/* <Social /> */}
+                            <a className='cv' target='_blank' href="./G.S_cv.pdf">
+                                <h3>CV</h3>
+                            </a>
                         </div>
                         <div className='spec'>
                             <Skills />

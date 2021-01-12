@@ -12,10 +12,7 @@ import React, { Component } from 'react'
           scrolled: false,
           cursor: 0,
       }
-
       this.handleScroll = this.handleScroll.bind(this)
-      // this.cursorOut = this.cursorOut.bind(this);
-      // this.cursorOver = this.cursorOver.bind(this);
   }
   isInViewport = function (elem) {
 
@@ -26,26 +23,7 @@ import React, { Component } from 'react'
   };
   componentDidMount () {
       window.addEventListener('scroll', this.handleScroll);
-      // window.addEventListener("mousemove", this.animation);
-      // let a = document.querySelectorAll('a');
-      // a.forEach(item => (
-      //   item.addEventListener('mouseover', this.cursorOver)
-      // ))
-      // a.forEach(item => (
-      //   item.addEventListener('mouseout', this.cursorOut)
-      // ))
   }
-  // cursorOver () {
-  //   this.setState({
-  //     cursor: 1
-  //   })
-
-  // }
-  // cursorOut () {
-  //   this.setState({
-  //     cursor: 0
-  //   })
-  // }
   animation (e) {
     let cursor = document.querySelector('#cursor');
     cursor.style.top = e.pageY - 10 + "px";
