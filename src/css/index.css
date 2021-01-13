@@ -492,7 +492,7 @@ body #body #projects {
   --card-left: -1000px;
   --card-right: 1000px;
   --grid-max: 400px;
-  background: var(--dark-teal-x-clear);
+  background: var(--dark-teal);
   padding: 5rem 1rem; }
   body #body #projects .projects-list {
     display: grid;
@@ -509,7 +509,8 @@ body #body #projects {
       margin: auto;
       max-width: calc(var(--card-width) + 7.9rem);
       max-height: calc(var(--card-height) + 3.9rem);
-      box-shadow: 0 0 10px var(--x-dark-teal); }
+      box-shadow: 0 0 10px var(--x-dark-teal);
+      position: inherit; }
       @media (max-width: 400px) {
         body #body #projects .projects-list .card-background {
           height: unset;
@@ -587,11 +588,16 @@ body #body #projects {
           height: 100%;
           left: 0;
           top: 0; }
+        body #body #projects .projects-list .card-background .card.open {
+          position: relative;
+          width: 40rem;
+          left: 50%;
+          transform: translateX(-50%); }
 body #body #footer {
   height: 25rem;
   background-color: var(--x-dark-teal); }
   body #body #footer .triangle {
-    background: var(--dark-teal-x-clear);
+    background: var(--dark-teal);
     width: 100%;
     height: 10rem;
     clip-path: polygon(50% 100%, 0 0, 100% 0); }

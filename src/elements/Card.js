@@ -7,38 +7,47 @@ export default class Card extends Component {
     
         this.state = {
              id: this.props.project.id,
-             position: 0
+             position: 0,
+             open: false
         }
+        this.openProject = this.openProject.bind(this)
     }
-
+    openProject() {
+        this.setState({ open: true})
+    }
     
     render() {
-        let link;
-        if (this.props.project.url) {
-            link = <a href={this.props.project.url} target='_black'>
+        let link, images;
+        const { open } = this.state
+        const { img, ref, title, info, url, stack } = this.props.project
+        if (url) {
+            link = <a href={url} target='_black'>
             </a>
         }
-        
-        // console.log(`title: ${this.props.project.title} position: ${this.state.position}`)
+        if(img){
+            images = img.map((im) => {
+                return <div className='container'><img key={im} src={im}></img></div>
+            })    
+        }
         return (
-            <li className={`card-background`}>
-                <div className={`card ${this.props.project.ref}`}>
-                    <h4 className='title'>{this.props.project.title}</h4>
+            <li onClick={this.openProject} className={`card-background`}>
+                <div className={`card ${ref} ${open ? 'open': ''}`}>
+                    <h4 className='title'>{title}</h4>
                     <ul className='stack'>
                         <div className='stack-icon'>
                             <span></span>
                             <span></span>
                             <span></span>
                         </div>
-                        {this.props.project.stack.map(item => (
+                        {stack.map(item => (
                         <li key={item}>{item}</li>
                     ))}</ul>
-                    <p className='about-project'>{this.props.project.info}</p>
+                    <p className='about-project'>{info}</p>
                     <span className='website'>
                         {link}
                     </span>
                 </div>
             </li>
-)
+        )
     }
 }

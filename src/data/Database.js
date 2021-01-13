@@ -2,6 +2,9 @@ import Github from '../icons/github.png';
 import Email from '../icons/email.png';
 import LinkedIn from '../icons/linkedin.png';
 // import React from 'react';
+import Rotame from '../image/rota_me.png'
+import Rotame1 from '../image/rota_me1.png'
+import Rotame2 from '../image/rota_me2.png'
 
 
 class Database  {
@@ -29,7 +32,8 @@ class Database  {
                 ref: 'rotaMe',
                 info: 'Schedule tracking application. For anyone who needs an easy way to schedule shifts. ',
                 url: 'http://aktoriukas.com/rota_me/',
-                stack: ['ReactJS', 'NodeJS', 'Express' , 'SQL' , 'Sass']
+                stack: ['ReactJS', 'NodeJS', 'Express' , 'SQL' , 'Sass'],
+                img: [Rotame, Rotame1, Rotame2]
             },
             {
                 id: 4,
@@ -62,14 +66,14 @@ class Database  {
                 url: 'https://investmentguide.africa/',
                 stack: ['Sass', 'VanillaJS']
             },
-            {
-                id: 1,
-                title: 'Drops bar',
-                ref: 'drops',
-                info: 'Website for local restaurant/bar.',
-                url: false,
-                stack: ['Html', 'Css']
-            }
+            // {
+            //     id: 1,
+            //     title: 'Drops bar',
+            //     ref: 'drops',
+            //     info: 'Website for local restaurant/bar.',
+            //     url: false,
+            //     stack: ['Html', 'Css']
+            // }
         ];
     }
     get skills () {
