@@ -7,13 +7,8 @@ export default class Card extends Component {
     
         this.state = {
              id: this.props.project.id,
-             position: 0,
-             open: false
+             position: 0
         }
-        this.openProject = this.openProject.bind(this)
-    }
-    openProject() {
-        this.setState({ open: true})
     }
     
     render() {
@@ -32,7 +27,7 @@ export default class Card extends Component {
             })    
         }
         return (
-            <li onClick={this.openProject} className={`card-background ${ref}`}>
+            <li className={`card-background ${ref}`}>
                 <div className={`card ${open ? 'open': ''}`}>
                     <h4 className='title'>{title}</h4>
                     <ul className='stack'>

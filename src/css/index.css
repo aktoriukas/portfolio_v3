@@ -490,8 +490,10 @@ body #body #projects {
   --card-width: 300px;
   --card-height: 400px;
   --width-max: 1200px;
+  --box-position: -2rem;
   background: var(--dark-teal);
-  padding: 5rem 1rem; }
+  padding: 5rem 1rem;
+  overflow: hidden; }
   body #body #projects .projects-list {
     display: flex;
     flex-direction: column;
@@ -501,9 +503,23 @@ body #body #projects {
       max-width: var(--width-max);
       display: flex;
       flex-direction: row;
-      padding: 4rem 2rem; }
+      padding: 4rem 2rem;
+      position: relative; }
+      body #body #projects .projects-list .card-background:before {
+        content: "";
+        position: absolute;
+        width: 75%;
+        height: 100%;
+        top: 2rem;
+        left: var(--box-position);
+        background-color: var(--clear-white);
+        z-index: 0;
+        box-shadow: 0 5px 10px var(--x-dark-teal); }
       body #body #projects .projects-list .card-background:nth-child(odd) {
         flex-direction: row-reverse; }
+        body #body #projects .projects-list .card-background:nth-child(odd)::before {
+          right: var(--box-position);
+          left: unset; }
       body #body #projects .projects-list .card-background.jedmap .images .container {
         width: 27rem; }
       body #body #projects .projects-list .card-background .images,
@@ -529,7 +545,8 @@ body #body #projects {
             top: 4rem; }
       body #body #projects .projects-list .card-background .card {
         overflow-x: hidden;
-        padding: 0.5rem; }
+        padding: 0.5rem;
+        z-index: 2; }
         body #body #projects .projects-list .card-background .card .title {
           font-size: var(--font-large);
           text-decoration: underline;
@@ -600,6 +617,8 @@ body #body #projects {
           flex-direction: column;
           padding: 0;
           margin: 1rem 0 7rem; }
+          body #body #projects .projects-list .card-background:before {
+            width: 150%; }
           body #body #projects .projects-list .card-background .card .website a div.site {
             left: 4.75rem;
             opacity: 1; }
