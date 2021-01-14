@@ -1,10 +1,24 @@
 import Github from '../icons/github.png';
 import Email from '../icons/email.png';
 import LinkedIn from '../icons/linkedin.png';
-// import React from 'react';
+// =========== IMAGES ======================
 import Rotame from '../image/rota_me.png'
 import Rotame1 from '../image/rota_me1.png'
 import Rotame2 from '../image/rota_me2.png'
+
+import Invest from '../image/invest.png';
+import Invest1 from '../image/invest1.png';
+import Invest2 from '../image/invest2.png';
+
+import Map from '../image/map.png';
+
+import Edge from '../image/ontheedge.png';
+import Edge1 from '../image/ontheedge1.png';
+import Edge2 from '../image/ontheedge2.png';
+
+import Transformers from '../image/transformers.png';
+import Transformers1 from '../image/transformers1.png';
+import Transformers2 from '../image/transformers2.png';
 
 
 class Database  {
@@ -16,22 +30,24 @@ class Database  {
                 ref: 'transformers',
                 info: 'Website for yearly Transformers academy who went completely virtual this year.',
                 url: 'https://isdb-transformers.org/',
-                stack: ['Sass', 'Drupal', 'Twig', 'VanillaJS']
+                stack: ['Sass', 'Drupal', 'Twig', 'VanillaJS'],
+                img: [Transformers, Transformers1, Transformers2]
             },
             {
                 id: 6,
                 title: 'On the edge',
                 ref: 'edge',
-                info: 'Completely new design for the whole website with new features and format.',
+                info: 'Complete redesign of the whole website. New format and structure.',
                 url: false,
-                stack: ['Sass', 'Twig', 'VanillaJS', 'Sanity']
+                stack: ['Sass', 'Twig', 'VanillaJS', 'Sanity'],
+                img: [Edge, Edge1, Edge2]
             },
             {
                 id: 5,
                 title: 'rota-me',
                 ref: 'rotaMe',
-                info: 'Schedule tracking application. For anyone who needs an easy way to schedule shifts. ',
-                url: 'http://aktoriukas.com/rota_me/',
+                info: 'Application for professionals in industries that require constantly changing graphics. Easy way to store, update and share scedules',
+                url: 'https://aktoriukas.com/rota_me/',
                 stack: ['ReactJS', 'NodeJS', 'Express' , 'SQL' , 'Sass'],
                 img: [Rotame, Rotame1, Rotame2]
             },
@@ -41,7 +57,8 @@ class Database  {
                 ref: 'jedmap',
                 info: 'Application to select and manipulate map in IsDB office.',
                 url: false,
-                stack: ['ReactJS', 'Sass']
+                stack: ['ReactJS', 'Sass', 'Axios'],
+                img: [Map]
             },
             // {
             //     id: 2,
@@ -62,9 +79,10 @@ class Database  {
                 id: 2,
                 title: 'Invest African Guide',
                 ref: 'invest',
-                info: 'Complete redesign of the whole website. Investment guidelines.',
+                info: 'Complete redesign of the whole website.',
                 url: 'https://investmentguide.africa/',
-                stack: ['Sass', 'VanillaJS']
+                stack: ['Sass', 'VanillaJS', 'Symphony'],
+                img: [Invest, Invest1, Invest2]
             },
             // {
             //     id: 1,

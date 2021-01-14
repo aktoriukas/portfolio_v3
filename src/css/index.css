@@ -489,53 +489,47 @@ body #body #about {
 body #body #projects {
   --card-width: 300px;
   --card-height: 400px;
-  --card-left: -1000px;
-  --card-right: 1000px;
-  --grid-max: 400px;
+  --width-max: 1200px;
   background: var(--dark-teal);
   padding: 5rem 1rem; }
   body #body #projects .projects-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-row-gap: 4rem;
-    grid-column-gap: 4rem;
-    margin: auto;
-    position: relative; }
-    @media (min-width: 991.98px) {
-      body #body #projects .projects-list {
-        grid-template-columns: repeat(auto-fit, minmax(var(--grid-max), 1fr)); } }
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
     body #body #projects .projects-list .card-background {
-      background: red;
-      margin: auto;
-      max-width: calc(var(--card-width) + 7.9rem);
-      max-height: calc(var(--card-height) + 3.9rem);
-      box-shadow: 0 0 10px var(--x-dark-teal);
-      position: inherit; }
-      @media (max-width: 400px) {
-        body #body #projects .projects-list .card-background {
-          height: unset;
-          width: unset; } }
+      margin: 3rem auto;
+      max-width: var(--width-max);
+      display: flex;
+      flex-direction: row;
+      padding: 4rem 2rem; }
+      body #body #projects .projects-list .card-background:nth-child(odd) {
+        flex-direction: row-reverse; }
+      body #body #projects .projects-list .card-background.jedmap .images .container {
+        width: 27rem; }
+      body #body #projects .projects-list .card-background .images,
       body #body #projects .projects-list .card-background .card {
-        position: relative;
-        top: 0;
-        left: 0;
-        background-color: var(--x-dark-teal);
-        padding: 2rem 3rem;
-        width: var(--card-width);
-        height: var(--card-height);
-        z-index: 500;
-        transition: all 0.5s ease; }
-        @media (max-width: 991.98px) {
-          body #body #projects .projects-list .card-background .card {
-            padding: 2rem 2rem; } }
-        @media (max-width: 400px) {
-          body #body #projects .projects-list .card-background .card {
-            height: unset;
-            width: unset; } }
-        body #body #projects .projects-list .card-background .card:hover {
-          top: -1rem;
-          left: 1rem;
-          box-shadow: -5px 5px 10px var(--x-dark-teal); }
+        flex: 0 0 50%; }
+      body #body #projects .projects-list .card-background .images {
+        display: flex;
+        flex-direction: row; }
+        body #body #projects .projects-list .card-background .images .container {
+          --size: 14rem;
+          width: var(--size);
+          height: var(--size);
+          position: relative;
+          left: 4rem; }
+          body #body #projects .projects-list .card-background .images .container img {
+            width: 100%;
+            box-shadow: 0 5px 20px var(--x-dark-teal); }
+          body #body #projects .projects-list .card-background .images .container:nth-child(2) {
+            left: -4rem;
+            top: 2rem; }
+          body #body #projects .projects-list .card-background .images .container:nth-child(3) {
+            left: -8rem;
+            top: 4rem; }
+      body #body #projects .projects-list .card-background .card {
+        overflow-x: hidden;
+        padding: 0.5rem; }
         body #body #projects .projects-list .card-background .card .title {
           font-size: var(--font-large);
           text-decoration: underline;
@@ -581,18 +575,48 @@ body #body #projects {
               content: ""; }
         body #body #projects .projects-list .card-background .card .about-project {
           font-size: var(--font-regular);
-          color: var(--off-white); }
+          color: var(--off-white);
+          margin-bottom: 1rem; }
         body #body #projects .projects-list .card-background .card .website a {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          left: 0;
-          top: 0; }
-        body #body #projects .projects-list .card-background .card.open {
+          transform-style: preserve-3d;
           position: relative;
-          width: 40rem;
-          left: 50%;
-          transform: translateX(-50%); }
+          width: 35rem;
+          height: 2.5rem;
+          display: block;
+          overflow: hidden; }
+          body #body #projects .projects-list .card-background .card .website a:hover .site {
+            left: 4.75rem;
+            opacity: 1; }
+          body #body #projects .projects-list .card-background .card .website a div {
+            transition: all 0.4s ease-in;
+            position: absolute;
+            font-size: var(--font-regular);
+            color: var(--red-orange); }
+            body #body #projects .projects-list .card-background .card .website a div.site {
+              left: 30rem;
+              opacity: 0; }
+      @media (max-width: 991.98px) {
+        body #body #projects .projects-list .card-background {
+          flex-direction: column;
+          padding: 0;
+          margin: 1rem 0 7rem; }
+          body #body #projects .projects-list .card-background .card .website a div.site {
+            left: 4.75rem;
+            opacity: 1; }
+          body #body #projects .projects-list .card-background .card .title {
+            text-align: center; }
+          body #body #projects .projects-list .card-background .images .container {
+            padding-top: 2rem;
+            width: 10rem;
+            height: fit-content; }
+            body #body #projects .projects-list .card-background .images .container img {
+              width: 140%; }
+          body #body #projects .projects-list .card-background.jedmap .images .container {
+            width: 15rem; }
+            body #body #projects .projects-list .card-background.jedmap .images .container img {
+              width: 100%; }
+          body #body #projects .projects-list .card-background:nth-child(odd) {
+            flex-direction: column; } }
 body #body #footer {
   height: 25rem;
   background-color: var(--x-dark-teal); }

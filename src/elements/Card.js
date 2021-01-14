@@ -22,16 +22,18 @@ export default class Card extends Component {
         const { img, ref, title, info, url, stack } = this.props.project
         if (url) {
             link = <a href={url} target='_black'>
-            </a>
+                        <div className='protocol'>https://</div>
+                        <div className='site'>{url.slice(8, -1)}</div>
+                   </a>
         }
         if(img){
             images = img.map((im) => {
-                return <div className='container'><img key={im} src={im}></img></div>
+                return <div key={im} className='container'><img src={im}></img></div>
             })    
         }
         return (
-            <li onClick={this.openProject} className={`card-background`}>
-                <div className={`card ${ref} ${open ? 'open': ''}`}>
+            <li onClick={this.openProject} className={`card-background ${ref}`}>
+                <div className={`card ${open ? 'open': ''}`}>
                     <h4 className='title'>{title}</h4>
                     <ul className='stack'>
                         <div className='stack-icon'>
@@ -46,6 +48,9 @@ export default class Card extends Component {
                     <span className='website'>
                         {link}
                     </span>
+                </div>
+                <div className='images'>
+                    {images}
                 </div>
             </li>
         )
