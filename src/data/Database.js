@@ -21,8 +21,8 @@ import Transformers1 from '../image/transformers1.png';
 import Transformers2 from '../image/transformers2.png';
 
 
-class Database  {
-    get projects () {
+class Database {
+    get projects() {
         return [
             {
                 id: 7,
@@ -47,8 +47,8 @@ class Database  {
                 title: 'rota-me',
                 ref: 'rotaMe',
                 info: 'Application for professionals in industries that require constantly changing graphics. Easy way to store, update and share scedules',
-                url: 'https://aktoriukas.com/rota_me/',
-                stack: ['ReactJS', 'NodeJS', 'Express' , 'SQL' , 'Sass'],
+                url: 'https://rota-me.com/',
+                stack: ['ReactJS', 'NodeJS', 'Express', 'SQL', 'Sass'],
                 img: [Rotame, Rotame1, Rotame2]
             },
             {
@@ -94,7 +94,7 @@ class Database  {
             // }
         ];
     }
-    get skills () {
+    get skills() {
         return [
             {
                 id: 1,
@@ -116,24 +116,24 @@ class Database  {
             }
         ]
     }
-    get socialMedia () {
+    get socialMedia() {
         return [
             {
-                id:1,
+                id: 1,
                 title: 'git-hub',
                 url: 'https://github.com/aktoriukas',
                 logo: Github
 
             },
             {
-                id:2,
+                id: 2,
                 title: 'email',
                 url: 'mailto: gediminas.strumila@gmail.com',
                 logo: Email
 
             },
             {
-                id:3,
+                id: 3,
                 title: 'linkedIn',
                 url: 'https://linkedin.com/in/strumila/',
                 logo: LinkedIn
@@ -141,16 +141,16 @@ class Database  {
             }
         ]
     }
-    get about () {
+    get about() {
         return (
             "I'm a Front-End Developer working in living in London. Passionate about building exceptional websites that can improve lives for those who use them. Excellent in problem-solving Working creatively and efficiently whilst meeting the highest standards and attention to detail."
         )
     }
-    get introduction () {
+    get introduction() {
         return (
             "Hi. I'm Gediminas, nice to see you here."
         )
     }
 }
 
-export default new Database ();
+export default new Database();
