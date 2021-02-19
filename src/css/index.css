@@ -534,7 +534,9 @@ body #body #projects {
           height: var(--size);
           position: relative;
           left: 4rem; }
-          body #body #projects .projects-list .card-background .images .container img {
+          body #body #projects .projects-list .card-background .images .container.video {
+            width: 25rem; }
+          body #body #projects .projects-list .card-background .images .container img, body #body #projects .projects-list .card-background .images .container video {
             width: 100%;
             box-shadow: 0 5px 20px var(--x-dark-teal); }
           body #body #projects .projects-list .card-background .images .container:nth-child(2) {
@@ -630,6 +632,9 @@ body #body #projects {
             height: fit-content; }
             body #body #projects .projects-list .card-background .images .container img {
               width: 140%; }
+            body #body #projects .projects-list .card-background .images .container.video {
+              width: 20rem;
+              left: 0; }
           body #body #projects .projects-list .card-background.jedmap .images .container {
             width: 15rem; }
             body #body #projects .projects-list .card-background.jedmap .images .container img {

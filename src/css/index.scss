@@ -435,7 +435,10 @@ body {
               height: var(--size);
               position: relative;
               left: 4rem;
-              img {
+              &.video{
+                width: 25rem;
+              }
+              img, video {
                 width: 100%;
                 box-shadow: 0 5px 20px var(--x-dark-teal);
               }
@@ -559,6 +562,10 @@ body {
               height: fit-content;
               img {
                 width: 140%;
+              }
+              &.video{
+                width: 20rem;
+                left: 0;
               }
             }
             &.jedmap .images .container {

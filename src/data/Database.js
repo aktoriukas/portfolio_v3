@@ -16,22 +16,20 @@ import Edge from '../image/ontheedge.png';
 import Edge1 from '../image/ontheedge1.png';
 import Edge2 from '../image/ontheedge2.png';
 
-import Transformers from '../image/transformers.png';
-import Transformers1 from '../image/transformers1.png';
-import Transformers2 from '../image/transformers2.png';
-
+import DrinkVideo from '../video/drink-me.mp4'
 
 class Database {
     get projects() {
         return [
             {
                 id: 7,
-                title: 'Transformers 2020',
-                ref: 'transformers',
-                info: 'Website for yearly Transformers academy who went completely virtual this year.',
-                url: 'https://isdb-transformers.org/',
-                stack: ['Sass', 'Drupal', 'Twig', 'VanillaJS'],
-                img: [Transformers, Transformers1, Transformers2]
+                title: 'cocktails',
+                ref: 'drink-me',
+                info: 'API for saving, reviewing and submiting cocktails.',
+                url: 'https://aktoriukas.com/drink-me/',
+                stack: ['React.Js', 'Sass', 'Node.Js'],
+                img: [],
+                video: [DrinkVideo]
             },
             {
                 id: 6,
@@ -48,7 +46,7 @@ class Database {
                 ref: 'rotaMe',
                 info: 'Application for professionals in industries that require constantly changing graphics. Easy way to store, update and share scedules',
                 url: 'https://rota-me.com/',
-                stack: ['ReactJS', 'NodeJS', 'Express', 'SQL', 'Sass'],
+                stack: ['React.Js', 'Node.Js', 'Express', 'SQL', 'Sass'],
                 img: [Rotame, Rotame1, Rotame2]
             },
             {
