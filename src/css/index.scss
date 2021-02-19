@@ -350,15 +350,44 @@ body {
               z-index: 2;
             }
             .skill {
-              background-color: var(--dark-teal);
               color: var(--white);
-              margin: 2rem;
+              margin: 2rem auto;
               padding: 2rem;
-              border-radius: 2rem;
-              max-width: 20rem;
+              width: 20rem;
+              height: 20rem;
+              perspective: 1000px;
+              .skill-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                transition: transform 0.8s ease;
+                transform-style: preserve-3d;
+              }
+              &:hover .skill-inner{
+                transform: rotateY(180deg);
+              }
+              .front, .back{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                border-radius: 2rem;
+              }
+              .front{
+                background-color: var(--dark-teal);
+              }
+              .back{
+                background-color: var(--dark-teal);
+                transform: rotateY(180deg);
+              }
               h3 {
                 color: var(--red-orange);
-                margin-bottom: 1rem;
+                margin: auto;
                 font-size: var(--font-medium);
               }
               li {
@@ -366,13 +395,16 @@ body {
                 font-size: var(--font-regular);
                 padding-left: 1rem;
                 position: relative;
+                text-align: left;
+                width: fit-content;
+                margin: .5rem auto .5rem 4rem;
                 &:before {
                   content: "";
                   width: 5px;
                   height: 5px;
                   background-color: var(--red-orange);
                   position: absolute;
-                  left: 0;
+                  left: .25rem;
                   top: 15px;
                   animation: rotate 10s infinite;
                 }
