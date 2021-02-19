@@ -79,7 +79,7 @@ class Database {
                 ref: 'invest',
                 info: 'Complete redesign of the whole website.',
                 url: 'https://investmentguide.africa/',
-                stack: ['Sass', 'VanillaJS', 'Symphony'],
+                stack: ['Sass', 'VanillaJS', 'Symphony', 'Drupal'],
                 img: [Invest, Invest1, Invest2]
             },
             // {
