@@ -162,7 +162,7 @@ body {
         padding: 1rem;
         span {
           position: absolute;
-          background-color: var(--x-dark-teal);
+          background-color: rgb(133, 133, 133);
           border-radius: 50%;
         }
         .left {
@@ -443,6 +443,7 @@ body {
             background-color: var(--clear-white);
             z-index: 0;
             box-shadow: 0 5px 10px var(--x-dark-teal);
+            border-radius: 1rem;
           }
           &:nth-child(odd) {
             flex-direction: row-reverse;

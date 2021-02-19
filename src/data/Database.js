@@ -98,13 +98,13 @@ class Database {
                 id: 1,
                 title: 'Front end',
                 ref: 'front',
-                info: 'Html / Sass|Css / Vanilla JS / ReactJS / Twig',
+                info: 'React.js / Vue.js / Sass|Css / Vanilla JS / Drupal / Sanity / Symphony',
             },
             {
                 id: 2,
                 title: 'Back end',
                 ref: 'back',
-                info: 'PHP / MySQL / NodeJS / Express / Sanity / Symphony'
+                info: 'Node.Js / MySQL / PHP / Express '
             },
             {
                 id: 3,

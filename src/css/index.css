@@ -307,7 +307,7 @@ body #welcome-screen {
       padding: 1rem; }
       body #welcome-screen .about #header-container span {
         position: absolute;
-        background-color: var(--x-dark-teal);
+        background-color: #858585;
         border-radius: 50%; }
       body #welcome-screen .about #header-container .left {
         left: 0;
@@ -541,7 +541,8 @@ body #body #projects {
         left: var(--box-position);
         background-color: var(--clear-white);
         z-index: 0;
-        box-shadow: 0 5px 10px var(--x-dark-teal); }
+        box-shadow: 0 5px 10px var(--x-dark-teal);
+        border-radius: 1rem; }
       body #body #projects .projects-list .card-background:nth-child(odd) {
         flex-direction: row-reverse; }
         body #body #projects .projects-list .card-background:nth-child(odd)::before {
