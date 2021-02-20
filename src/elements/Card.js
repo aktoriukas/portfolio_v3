@@ -29,7 +29,7 @@ export default class Card extends Component {
         if (video) {
             videoCard =
                 <div className='container video'>
-                    <video autoPlay muted loop>
+                    <video playsInline autoPlay muted loop>
                         <source src={video} type='video/mp4' />
                     </video>
                 </div>
