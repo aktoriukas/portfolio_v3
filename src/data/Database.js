@@ -16,7 +16,7 @@ import Edge from '../image/ontheedge.png';
 import Edge1 from '../image/ontheedge1.png';
 import Edge2 from '../image/ontheedge2.png';
 
-import DrinkVideo from '../video/drink-me.mp4'
+import DrinkVideo from '../video/drink-me.m4v'
 
 class Database {
     get projects() {
