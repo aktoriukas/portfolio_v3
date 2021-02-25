@@ -1,0 +1,104 @@
+#logo-container{
+    position: relative;
+    right: -10rem;
+    z-index: 500;
+    transition: all 1s ease;
+    &:not(.active){
+        #logo path{
+            &:nth-child(3){
+                animation: blink-long 10s infinite ease-in-out;
+            }
+        }
+    }
+    .box{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 55px;
+        height: 60px;
+        cursor: pointer;
+        z-index: 10;
+        &#name-box{
+            top: 44%;
+            width: 280px;
+        }
+        &#github-box{
+            top: 42%;
+            left: 280px;
+            width: 300px;
+        }
+        &#web-box{
+            top: 44%;
+            left: 340px;
+            width: 420px;
+            height: 80px;
+        }
+        &#email-box{
+            top: 57%;
+            left: 0;
+            width: 760px;
+            height: 80px;
+        }
+    }
+    #logo{
+        width: 100vh;
+        height: 100vh;
+        filter: drop-shadow( 0 0 4px var(--red-orange-pale));
+        path{
+            &:nth-child(1){
+                stroke: var(--off-white);
+                fill-opacity: 0.2;
+            }
+            &:nth-child(2){fill: var(--off-white);}
+            &:nth-child(3){fill: var(--off-white);}
+        }
+        .el{
+            &.active{
+                path{
+                    &:nth-child(1){stroke: var(--red-orange); }
+                    &:nth-child(2){fill: var(--red-orange); }
+                    &:nth-child(3){
+                        fill: var(--red-orange);
+                        fill-opacity: 1;
+                        animation: blink 1s ease-in-out;
+                    }    
+                }
+            }
+            &:not(.active){
+                path{
+                    &:nth-child(1){opacity: 0.2;}
+                    &:nth-child(2){opacity: 0.2;}
+                    &:nth-child(3){fill-opacity: 0;}
+                }
+            }    
+        }
+    }
+    @media (max-width: 991.98px) {
+        right: 8rem;
+        top:-10rem;
+        transform: rotate(-90deg);
+    }
+}
+@keyframes blink {
+    0%{opacity: 0;}
+    50%{opacity: 1;}
+    60%{opacity: 0;}
+    62%{opacity: 1;}
+    70%{opacity: 1;}
+    73%{opacity: 0;}
+    76%{opacity: 1;}
+    100%{opacity: 1;}
+}
+@keyframes blink-long {
+    0%{fill-opacity: 0;}
+    25%{fill-opacity: 1;}
+    50%{fill-opacity: 1;}
+    60%{fill-opacity: 0;}
+    61%{fill-opacity: 1;}
+    70%{fill-opacity: 1;}
+    71%{fill-opacity: 0;}
+    72%{fill-opacity: 1;}
+    80%{fill-opacity: 1;}
+    100%{fill-opacity: 0;}
+}

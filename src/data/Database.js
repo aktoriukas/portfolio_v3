@@ -126,7 +126,7 @@ class Database {
             {
                 id: 2,
                 title: 'email',
-                url: 'mailto: gediminas.strumila@gmail.com',
+                url: 'mailto: gediminas@aktoriukas.com',
                 logo: Email
 
             },

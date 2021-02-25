@@ -1,5 +1,6 @@
 @import "./mixin.scss";
 @import "./cube.scss";
+@import './logo.scss';
 
 // VARIABLES ===============
 
@@ -154,6 +155,7 @@ body {
     padding: 0;
     display: flex;
     background: var(--dark-teal-x-clear);
+    overflow: hidden;
     .about {
       margin: auto;
       #header-container {

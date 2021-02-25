@@ -188,6 +188,108 @@
     transform: rotateX(-100deg) rotateY(-128deg) rotateZ(80deg); }
   100% {
     transform: rotateX(-22deg) rotateY(-38deg) rotateZ(0deg); } }
+#logo-container {
+  position: relative;
+  right: -10rem;
+  z-index: 500;
+  transition: all 1s ease; }
+  #logo-container:not(.active) #logo path:nth-child(3) {
+    animation: blink-long 10s infinite ease-in-out; }
+  #logo-container .box {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 55px;
+    height: 60px;
+    cursor: pointer;
+    z-index: 10; }
+    #logo-container .box#name-box {
+      top: 44%;
+      width: 280px; }
+    #logo-container .box#github-box {
+      top: 42%;
+      left: 280px;
+      width: 300px; }
+    #logo-container .box#web-box {
+      top: 44%;
+      left: 340px;
+      width: 420px;
+      height: 80px; }
+    #logo-container .box#email-box {
+      top: 57%;
+      left: 0;
+      width: 760px;
+      height: 80px; }
+  #logo-container #logo {
+    width: 100vh;
+    height: 100vh;
+    filter: drop-shadow(0 0 4px var(--red-orange-pale)); }
+    #logo-container #logo path:nth-child(1) {
+      stroke: var(--off-white);
+      fill-opacity: 0.2; }
+    #logo-container #logo path:nth-child(2) {
+      fill: var(--off-white); }
+    #logo-container #logo path:nth-child(3) {
+      fill: var(--off-white); }
+    #logo-container #logo .el.active path:nth-child(1) {
+      stroke: var(--red-orange); }
+    #logo-container #logo .el.active path:nth-child(2) {
+      fill: var(--red-orange); }
+    #logo-container #logo .el.active path:nth-child(3) {
+      fill: var(--red-orange);
+      fill-opacity: 1;
+      animation: blink 1s ease-in-out; }
+    #logo-container #logo .el:not(.active) path:nth-child(1) {
+      opacity: 0.2; }
+    #logo-container #logo .el:not(.active) path:nth-child(2) {
+      opacity: 0.2; }
+    #logo-container #logo .el:not(.active) path:nth-child(3) {
+      fill-opacity: 0; }
+  @media (max-width: 991.98px) {
+    #logo-container {
+      right: 8rem;
+      top: -10rem;
+      transform: rotate(-90deg); } }
+
+@keyframes blink {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  60% {
+    opacity: 0; }
+  62% {
+    opacity: 1; }
+  70% {
+    opacity: 1; }
+  73% {
+    opacity: 0; }
+  76% {
+    opacity: 1; }
+  100% {
+    opacity: 1; } }
+@keyframes blink-long {
+  0% {
+    fill-opacity: 0; }
+  25% {
+    fill-opacity: 1; }
+  50% {
+    fill-opacity: 1; }
+  60% {
+    fill-opacity: 0; }
+  61% {
+    fill-opacity: 1; }
+  70% {
+    fill-opacity: 1; }
+  71% {
+    fill-opacity: 0; }
+  72% {
+    fill-opacity: 1; }
+  80% {
+    fill-opacity: 1; }
+  100% {
+    fill-opacity: 0; } }
 :root {
   --red-orange: #ff4838;
   --red-orange-pale: #ff4938c5;
@@ -298,7 +400,8 @@ body #welcome-screen {
   margin: 0;
   padding: 0;
   display: flex;
-  background: var(--dark-teal-x-clear); }
+  background: var(--dark-teal-x-clear);
+  overflow: hidden; }
   body #welcome-screen .about {
     margin: auto; }
     body #welcome-screen .about #header-container {
