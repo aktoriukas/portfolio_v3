@@ -190,11 +190,23 @@
     transform: rotateX(-22deg) rotateY(-38deg) rotateZ(0deg); } }
 #logo-container {
   position: relative;
-  right: -10rem;
+  right: -13rem;
   z-index: 500;
   transition: all 1s ease; }
-  #logo-container:not(.active) #logo path:nth-child(3) {
-    animation: blink-long 10s infinite ease-in-out; }
+  #logo-container:not(.active) #logo .el path {
+    animation: blink 1s ease-in-out;
+    animation-delay: 1s; }
+  #logo-container:not(.active) #logo .el:nth-child(1) path:nth-child(3) {
+    animation: blink-long 20s infinite ease-in-out; }
+  #logo-container:not(.active) #logo .el:nth-child(2) path:nth-child(3) {
+    animation: blink-long 20s infinite ease-in-out;
+    animation-delay: 5s; }
+  #logo-container:not(.active) #logo .el:nth-child(3) path:nth-child(3) {
+    animation: blink-long 20s infinite ease-in-out;
+    animation-delay: 10s; }
+  #logo-container:not(.active) #logo .el:nth-child(4) path:nth-child(3) {
+    animation: blink-long 20s infinite ease-in-out;
+    animation-delay: 15s; }
   #logo-container .box {
     position: absolute;
     top: 50%;
@@ -231,7 +243,7 @@
     #logo-container #logo path:nth-child(2) {
       fill: var(--off-white); }
     #logo-container #logo path:nth-child(3) {
-      fill: var(--off-white); }
+      fill: var(--red-orange); }
     #logo-container #logo .el.active path:nth-child(1) {
       stroke: var(--red-orange); }
     #logo-container #logo .el.active path:nth-child(2) {
@@ -248,9 +260,9 @@
       fill-opacity: 0; }
   @media (max-width: 991.98px) {
     #logo-container {
-      right: 8rem;
-      top: -10rem;
-      transform: rotate(-90deg); } }
+      transform: scale(0.5);
+      right: unset;
+      left: -10rem; } }
 
 @keyframes blink {
   0% {
@@ -272,22 +284,24 @@
 @keyframes blink-long {
   0% {
     fill-opacity: 0; }
+  10% {
+    fill-opacity: 1; }
+  11% {
+    fill-opacity: 1; }
+  11.5% {
+    fill-opacity: 0; }
+  12% {
+    fill-opacity: 1; }
+  20% {
+    fill-opacity: 1; }
+  21% {
+    fill-opacity: 0; }
+  22% {
+    fill-opacity: 1; }
   25% {
     fill-opacity: 1; }
-  50% {
-    fill-opacity: 1; }
-  60% {
+  26% {
     fill-opacity: 0; }
-  61% {
-    fill-opacity: 1; }
-  70% {
-    fill-opacity: 1; }
-  71% {
-    fill-opacity: 0; }
-  72% {
-    fill-opacity: 1; }
-  80% {
-    fill-opacity: 1; }
   100% {
     fill-opacity: 0; } }
 :root {
