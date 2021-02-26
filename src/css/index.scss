@@ -37,6 +37,7 @@
   @media (max-width: 500px) {
     --cube-size: 100px;
   }
+  -webkit-tap-highlight-color: transparent;
 }
 * {
   // cursor: none;
@@ -82,6 +83,7 @@
     width: 100%;
   }
 }
+
 
 // BASICS ===================
 html,

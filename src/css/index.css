@@ -312,7 +312,8 @@
   --width-small: 500px;
   --width-medium: 800px;
   --width-x-large: 1600px;
-  --cube-size: 412px; }
+  --cube-size: 412px;
+  -webkit-tap-highlight-color: transparent; }
   @media (max-width: 991.98px) {
     :root {
       --font-xx-large: 50px;
