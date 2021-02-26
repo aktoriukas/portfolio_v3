@@ -60,6 +60,29 @@
 //   }
 // }
 
+.background-img-container{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  .filter{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    background-color:var(--dark-teal-x-clear);
+  }
+  .img{
+    height: auto;
+    min-height: 100%;
+    width: 100%;
+  }
+}
+
 // BASICS ===================
 html,
 body,
@@ -122,9 +145,11 @@ h5 {
   animation: nameAnimation 180s infinite;
 }
 ::-webkit-scrollbar {
+  display: none;
   width: 40px;
 }
 ::-webkit-scrollbar-track {
+  display: none;
   background: linear-gradient(
     90deg,
     rgba(22, 39, 45, 1) 0%,
@@ -135,6 +160,7 @@ h5 {
 }
 
 ::-webkit-scrollbar-thumb {
+  display: none;
   border-radius: 30px;
   background: -webkit-gradient(
     linear,
@@ -619,16 +645,24 @@ body {
     #footer {
       height: 25rem;
       background-color: var(--x-dark-teal);
+      position: relative;
       .triangle {
         background: var(--dark-teal);
         width: 100%;
         height: 10rem;
         clip-path: polygon(50% 100%, 0 0, 100% 0);
+        z-index: 2;
+        position: relative;
+      }
+      .background-img-container{
+        z-index: 1;
       }
       .social-media {
         display: flex;
         justify-content: center;
         padding-top: 5rem;
+        z-index: 4;
+        position: relative;
         li {
           margin: 0 2rem;
           padding: 0.4rem 0.4rem 0.4rem;
@@ -653,6 +687,8 @@ body {
         }
       }
       .footnote {
+        position: relative;
+        z-index: 5;
         color: var(--off-white);
         text-align: center;
         width: 100%;

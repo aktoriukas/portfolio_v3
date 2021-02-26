@@ -324,6 +324,26 @@
 * {
   scroll-behavior: smooth; }
 
+.background-img-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+  .background-img-container .filter {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--dark-teal-x-clear); }
+  .background-img-container .img {
+    height: auto;
+    min-height: 100%;
+    width: 100%; }
+
 html,
 body,
 #root {
@@ -384,12 +404,15 @@ h5 {
   animation: nameAnimation 180s infinite; }
 
 ::-webkit-scrollbar {
+  display: none;
   width: 40px; }
 
 ::-webkit-scrollbar-track {
+  display: none;
   background: linear-gradient(90deg, #16272d 0%, var(--dark-teal-clear) 48%, var(--dark-teal-clear) 52%, #16272d 100%); }
 
 ::-webkit-scrollbar-thumb {
+  display: none;
   border-radius: 30px;
   background: -webkit-gradient(linear, left top, left bottom, from(var(--red-orange-pale)), to(var(--red-orange)));
   box-shadow: inset 2px 2px 2px var(--clear-white), inset -2px -2px 2px var(--dark-teal-clear); }
@@ -774,16 +797,23 @@ body #body #projects {
             flex-direction: column; } }
 body #body #footer {
   height: 25rem;
-  background-color: var(--x-dark-teal); }
+  background-color: var(--x-dark-teal);
+  position: relative; }
   body #body #footer .triangle {
     background: var(--dark-teal);
     width: 100%;
     height: 10rem;
-    clip-path: polygon(50% 100%, 0 0, 100% 0); }
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    z-index: 2;
+    position: relative; }
+  body #body #footer .background-img-container {
+    z-index: 1; }
   body #body #footer .social-media {
     display: flex;
     justify-content: center;
-    padding-top: 5rem; }
+    padding-top: 5rem;
+    z-index: 4;
+    position: relative; }
     body #body #footer .social-media li {
       margin: 0 2rem;
       padding: 0.4rem 0.4rem 0.4rem;
@@ -801,6 +831,8 @@ body #body #footer {
         position: absolute;
         transition: opacity 0.5s ease; }
   body #body #footer .footnote {
+    position: relative;
+    z-index: 5;
     color: var(--off-white);
     text-align: center;
     width: 100%;

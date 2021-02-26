@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Cube from './Cube';
 import BackgroundSlice from './BackgroundSlice'
 
+import Img from '../image/dark-brick-wall.jpg'
+
 import Logo from './Logo'
 
 export default class Welcome extends Component {
@@ -84,13 +86,17 @@ export default class Welcome extends Component {
                         scrolled={this.props.scrolled}
                     /> */}
                     <div id='logo-container' className='cont'>
-                        <div id='name-box' className='box' />
-                        <div id='web-box' className='box' />
-                        <div id='github-box' className='box' />
-                        <div id='email-box' className='box' />
+                        <a id='name-box' className='box' />
+                        <a id='web-box' className='box' />
+                        <a href="https://github.com/aktoriukas" target='_black' id='github-box' className='box' />
+                        <a href="mailto: gediminas@aktoriukas.com" target='_black' id='email-box' className='box' />
                         <Logo />
                     </div>
-                    <BackgroundSlice />
+                    {/* <BackgroundSlice /> */}
+                    <div className='background-img-container'>
+                        <div className='filter' />
+                        <img className='img' src={Img} alt='brick-wall' />
+                    </div>
                 </div>
             </section>
         )
