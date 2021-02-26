@@ -141,7 +141,7 @@ class Database {
     }
     get about() {
         return (
-            "I'm a Web Developer working in living in London. Passionate about building exceptional solutions that can improve lives for those who use them."
+            "I'm a Web Developer working in living in London. Passionate about building exceptional digital solutions that can improve lives for those who use them."
         )
     }
     get introduction() {
