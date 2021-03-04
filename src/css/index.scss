@@ -60,6 +60,9 @@
 //     display: none;
 //   }
 // }
+#footer .background-img-container .filter{
+  background-color: #162b32cf;
+}
 
 .background-img-container{
   position: absolute;
@@ -504,6 +507,7 @@ body {
               img, video {
                 width: 100%;
                 box-shadow: 0 5px 20px var(--x-dark-teal);
+                border-radius: .5rem;
               }
               &:nth-child(2) {
                 left: -4rem;
@@ -592,7 +596,7 @@ body {
                 }
               }
               div {
-                transition: all 0.4s ease-in;
+                transition: all 0.2s ease-in-out;
                 position: absolute;
                 font-size: var(--font-regular);
                 color: var(--red-orange);
@@ -648,11 +652,14 @@ body {
       height: 25rem;
       background-color: var(--x-dark-teal);
       position: relative;
+      height: 100%;
+      top: -2px;
+      padding-bottom: 2rem;
       .triangle {
         background: var(--dark-teal);
         width: 100%;
         height: 10rem;
-        clip-path: polygon(50% 100%, 0 0, 100% 0);
+        clip-path: polygon(50% 25%, 0 0, 100% 0);
         z-index: 2;
         position: relative;
       }

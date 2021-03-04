@@ -16,11 +16,23 @@ import Edge from '../image/ontheedge.png';
 import Edge1 from '../image/ontheedge1.png';
 import Edge2 from '../image/ontheedge2.png';
 
+import Kratinys from '../image/kratinys.png'
+import Kratinys2 from '../image/kratinys2.png'
+
 import DrinkVideo from '../video/drink-me.m4v'
 
 class Database {
     get projects() {
         return [
+            {
+                id: 8,
+                title: 'Kratinys',
+                ref: 'drink-me',
+                info: 'React elements library.',
+                url: 'https://github.com/aktoriukas/element_salad/',
+                stack: ['React.Js', 'styled-components', 'CSS', 'NPM'],
+                img: [Kratinys, Kratinys2],
+            },
             {
                 id: 7,
                 title: 'cocktails',
@@ -98,7 +110,7 @@ class Database {
                 id: 1,
                 title: 'Front end',
                 ref: 'front',
-                info: 'React.js / Vue.js / Sass|Css / Vanilla JS / Drupal / Sanity / Symphony',
+                info: 'React.js / Vue.js / Sass|Css / Vanilla JS / Drupal / Wordpress / Redux',
             },
             {
                 id: 2,

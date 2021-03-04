@@ -339,6 +339,9 @@
 * {
   scroll-behavior: smooth; }
 
+#footer .background-img-container .filter {
+  background-color: #162b32cf; }
+
 .background-img-container {
   position: absolute;
   left: 0;
@@ -707,7 +710,8 @@ body #body #projects {
             width: 25rem; }
           body #body #projects .projects-list .card-background .images .container img, body #body #projects .projects-list .card-background .images .container video {
             width: 100%;
-            box-shadow: 0 5px 20px var(--x-dark-teal); }
+            box-shadow: 0 5px 20px var(--x-dark-teal);
+            border-radius: .5rem; }
           body #body #projects .projects-list .card-background .images .container:nth-child(2) {
             left: -4rem;
             top: 2rem; }
@@ -776,7 +780,7 @@ body #body #projects {
             left: 4.75rem;
             opacity: 1; }
           body #body #projects .projects-list .card-background .card .website a div {
-            transition: all 0.4s ease-in;
+            transition: all 0.2s ease-in-out;
             position: absolute;
             font-size: var(--font-regular);
             color: var(--red-orange); }
@@ -813,12 +817,15 @@ body #body #projects {
 body #body #footer {
   height: 25rem;
   background-color: var(--x-dark-teal);
-  position: relative; }
+  position: relative;
+  height: 100%;
+  top: -2px;
+  padding-bottom: 2rem; }
   body #body #footer .triangle {
     background: var(--dark-teal);
     width: 100%;
     height: 10rem;
-    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    clip-path: polygon(50% 25%, 0 0, 100% 0);
     z-index: 2;
     position: relative; }
   body #body #footer .background-img-container {
