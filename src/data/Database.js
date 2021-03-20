@@ -110,19 +110,19 @@ class Database {
                 id: 1,
                 title: 'Front end',
                 ref: 'front',
-                info: 'React.js / Vue.js / Sass|Css / Vanilla JS / Drupal / Wordpress / Redux',
+                info: 'React.js / Vue.js / Sass|Css / Vanilla JS / Drupal / Wordpress ',
             },
             {
                 id: 2,
                 title: 'Back end',
                 ref: 'back',
-                info: 'Node.Js / MySQL / PHP / Express '
+                info: 'Node.Js / MySQL / MongoDb / PHP / Express '
             },
             {
                 id: 3,
                 title: 'Design',
                 ref: 'design',
-                info: 'Photoshop / Indesign / Illustrator / Figma / Gravit Designer'
+                info: 'Abode Photoshop / Adobe Indesign / Adobe XD / Illustrator / Figma / Gravit Designer'
             }
         ]
     }
