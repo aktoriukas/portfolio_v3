@@ -1,56 +1,28 @@
-import Welcome from './elements/Welcome';
-import Header from './elements/Header';
-import Body from './elements/Body';
+import React, {useEffect, useState} from 'react'
 
-import React, { Component } from 'react'
+import Hello from './elements/Hello'
+import Welcome from './elements/Welcome'
+import About from './elements/About'
 
-  export default class App extends Component {
-    constructor(props) {
-      super(props)
+export default function App() {
 
-      this.state = {
-          scrolled: false,
-          cursor: 0,
-      }
-      this.handleScroll = this.handleScroll.bind(this)
-  }
-  isInViewport = function (elem) {
+  return (
+    <div className='App'>
 
-      let bounding = elem.getBoundingClientRect();
-      return (
-          bounding.top < 500
-      );
-  };
-  componentDidMount () {
-      window.addEventListener('scroll', this.handleScroll);
-  }
-  animation (e) {
-    let cursor = document.querySelector('#cursor');
-    cursor.style.top = e.pageY - 10 + "px";
-    cursor.style.left = e.pageX - 15 + "px";
-  }
-  handleScroll(e) {
+      <div className='container-lg welcome-page'>
 
-    let body = document.getElementById('body');
-    let scrolled = this.isInViewport(body)? true : false;
-    let app = document.getElementsByClassName('App')
-    if (scrolled) {
-      app[0].classList.add('scrolled')
-    }else {
-      app[0].classList.remove('scrolled')
-    }
-  }
-  render() {
-    return (
-      <div className={this.state.scrolled === false? 'App ' : 'App scrolled'}>
-        <Welcome 
-          scrolled={this.state.scrolled}
-        />
-        <Header />
-        <Body 
-        />
-        {/* <span id='cursor' className={this.state.cursor === 0 ? '' : 'over'}></span> */}
+        <div className='row'>
+          <Hello />
+          <Welcome />
+
+        </div>
+
       </div>
-    )
-  }
+
+      <div className='container-lg about-page'>
+          <About />
+      </div>
+      
+    </div>
+)
 }

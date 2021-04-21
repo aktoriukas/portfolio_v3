@@ -158,7 +158,7 @@ class Database {
     }
     get introduction() {
         return (
-            "Hi. I'm Gediminas, nice to see you here."
+            "I'm Gediminas, nice to see you here."
         )
     }
 }
