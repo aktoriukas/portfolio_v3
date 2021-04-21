@@ -14,3 +14,11 @@
     left: 2rem;
   }
 }
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(calc(-64px * 24));
+  }
+}
