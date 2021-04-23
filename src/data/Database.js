@@ -70,13 +70,6 @@ class Database {
                 stack: ['ReactJS', 'Sass', 'Axios'],
                 img: [Map]
             },
-            // {
-            //     id: 2,
-            //     title: 'Isdb Development bank',
-            //     ref: 'isdb',
-            //     info: 'Support on adding features / JavaScript / Sass',
-            //     url: 'https://www.isdb.org/'
-            // },
             {
                 id: 3,
                 title: 'Brand Guidlines',
@@ -94,14 +87,6 @@ class Database {
                 stack: ['Sass', 'VanillaJS', 'Symphony', 'Drupal'],
                 img: [Invest, Invest1, Invest2]
             },
-            // {
-            //     id: 1,
-            //     title: 'Drops bar',
-            //     ref: 'drops',
-            //     info: 'Website for local restaurant/bar.',
-            //     url: false,
-            //     stack: ['Html', 'Css']
-            // }
         ];
     }
     get skills() {
