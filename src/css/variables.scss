@@ -1,3 +1,9 @@
+$blue: #3a405a;
+$dark-grey: #a7a2a9;
+$light-grey: #f4f7f5;
+$brown: #685044;
+$green: #36827f;
+
 @mixin breakpoint($point) {
   @if $point == medium {
     @media (min-width: 768px) {
@@ -13,10 +19,23 @@
     }
   }
 }
-@mixin white-gradient {
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+
+@keyframes up {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -100%;
+  }
+  100% {
+    display: none;
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

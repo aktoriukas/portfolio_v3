@@ -27,7 +27,7 @@ class Database {
             {
                 id: 8,
                 title: 'Kratinys',
-                ref: 'drink-me',
+                ref: 'kratonys',
                 info: 'React elements library.',
                 url: 'https://github.com/aktoriukas/element_salad/',
                 stack: ['React.Js', 'styled-components', 'CSS', 'NPM'],
@@ -40,7 +40,6 @@ class Database {
                 info: 'API for saving, reviewing and submiting cocktails.',
                 url: 'https://aktoriukas.com/drink-me/',
                 stack: ['React.Js', 'Sass', 'Node.Js'],
-                img: [],
                 video: [DrinkVideo]
             },
             {

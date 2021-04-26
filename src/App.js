@@ -1,36 +1,24 @@
 import React, {useEffect, useState} from 'react'
 
-import Hello from './elements/Hello'
-import Welcome from './elements/Welcome'
-import About from './elements/About'
-import Technologies from './elements/Technologies'
+import SocialMedia from './elements/Social'
+import Title from './elements/Title'
 import Projects from './elements/Projects'
+import Contact from './elements/Contact';
 
 export default function App() {
 
   return (
-    <div className='App'>
 
-      <div className='container-lg welcome-page'>
+  <div className={`App`}>
 
-        <div className='row'>
-          <Hello />
-          <Welcome />
+    <SocialMedia />
 
-        </div>
-      </div>
+    <Title />
 
-      <div className='container-lg about-page'>
-          <About />
-      </div>
+    <Projects />
 
-      <div className='technologies-page'>
-          <Technologies />
-      </div>
+    <Contact />
 
-      <div className='container-lg projects-page'>
-          <Projects />
-      </div>
-    </div>
-)
+  </div>   
+  )
 }
