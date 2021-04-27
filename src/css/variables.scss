@@ -4,6 +4,13 @@ $light-grey: #f4f7f5;
 $brown: #685044;
 $green: #36827f;
 
+// code sandbox
+
+$code-pink: #f52772;
+$code-green: #4eaa0c;
+$code-blue: #0cc6e7;
+$code-el: #36af90;
+
 @mixin breakpoint($point) {
   @if $point == medium {
     @media (min-width: 768px) {

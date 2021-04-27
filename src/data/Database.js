@@ -21,6 +21,7 @@ import Kratinys2 from '../image/kratinys2.png'
 
 import DrinkVideo from '../video/drink-me.m4v'
 
+
 class Database {
     get projects() {
         return [
@@ -90,24 +91,23 @@ class Database {
     }
     get skills() {
         return [
-            {
-                id: 1,
-                title: 'Front end',
-                ref: 'front',
-                info: 'React.js / Vue.js / Sass|Css / Vanilla JS / Drupal / Wordpress ',
-            },
-            {
-                id: 2,
-                title: 'Back end',
-                ref: 'back',
-                info: 'Node.Js / MySQL / MongoDb / PHP / Express '
-            },
-            {
-                id: 3,
-                title: 'Design',
-                ref: 'design',
-                info: 'Abode Photoshop / Adobe Indesign / Adobe XD / Illustrator / Figma / Gravit Designer'
-            }
+            'React.js',
+            'Redux',
+            'Vue.js',
+            'Sass|Css',
+            'Vanilla JS',
+            'Drupal',
+            'Wordpress',
+            'Node.Js',
+            'MySQL',
+            'MongoDb',
+            'PHP',
+            'Express',
+            'Abode Photoshop',
+            'Adobe Indesign',
+            'Adobe XD',
+            'Illustrator',
+            'Figma'
         ]
     }
     get socialMedia() {

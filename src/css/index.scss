@@ -7,10 +7,12 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   scroll-behavior: smooth;
   font-family: Quicksand;
   box-sizing: border-box;
+  overflow-x: hidden;
+  background-color: $light-grey;
 }
 
 .App,
@@ -50,10 +52,75 @@ button {
     outline: none;
   }
 }
+.code-blue {
+  color: $code-blue;
+}
+.code-pink {
+  color: $code-pink;
+}
+.code-green {
+  color: $code-green;
+}
+.code-el {
+  color: $code-el;
+}
+.btn-custom {
+  background: transparent;
+  outline: none;
+  border: 2px solid $dark-grey;
+}
+.technologies {
+  height: 100vh;
+  display: flex;
+  .terminal {
+    padding: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    font-family: "DEC Terminal Modern";
+    letter-spacing: 1px;
+    box-shadow: 0 0 8px 3px $dark-grey;
+    @include breakpoint(large) {
+      width: 50%;
+      margin: auto;
+      .skills {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .skill {
+          flex: 50%;
+        }
+      }
+    }
+    .body {
+      background: black;
+      color: $light-grey;
+      padding: 2rem 1rem;
+    }
+    .blinker {
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 100%;
+        background: $code-green;
+        opacity: 0;
+        top: 0;
+        left: 0.5rem;
+        transition: none;
+        animation: blink 2s infinite;
+      }
+    }
+  }
+  .about {
+    height: fit-content;
+    margin: auto;
+  }
+}
 .social-media {
-  position: fixed;
+  position: absolute;
   left: 0;
-  top: 50%;
+  top: 80%;
   display: flex;
   flex-direction: column;
   a {
@@ -73,7 +140,7 @@ button {
       opacity: 1;
     }
     img {
-      height: 3rem;
+      height: 2rem;
       padding: 0.5rem;
     }
   }
@@ -94,11 +161,7 @@ h2 {
   br {
     height: 0px;
   }
-  .link-container {
-    a {
-      color: $green;
-    }
-  }
+
   .code-sandbox-inner {
     margin: 0 1rem;
     padding: 0 1rem;
@@ -108,14 +171,37 @@ h2 {
       content: "";
       position: absolute;
       top: 0;
-      left: 0rem;
+      left: -0.5rem;
       height: 100%;
       width: 1px;
       background-color: $dark-grey;
     }
   }
   p {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.5;
+    @include breakpoint(large) {
+      line-height: 2;
+    }
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      left: -150%;
+      top: 0;
+      width: 300%;
+      height: 100%;
+      background: $light-grey;
+      z-index: -5;
+      opacity: 0;
+      transition: opacity 0.25s ease-in-out;
+    }
+    &:hover {
+      &::before {
+        opacity: 1;
+      }
+    }
     &::after {
       content: ",";
     }
@@ -131,7 +217,7 @@ h2 {
         content: counter(line);
         line-height: 3.4;
         position: absolute;
-        left: -1rem;
+        left: -2.5rem;
         font-size: 0.6rem;
       }
 
@@ -170,12 +256,7 @@ h2 {
           box-shadow: 0 0 5px 2px $dark-grey;
           left: 0;
           top: 0;
-        }
-        &:hover {
-          img,
-          video {
-            display: block;
-          }
+          border-radius: 1rem;
         }
         &:last-of-type {
           span::after {
@@ -194,7 +275,7 @@ h2 {
     padding-left: 1rem;
     .input {
       display: flex;
-      margin: 1rem 0;
+      padding: 1rem 0;
       position: relative;
       label {
         width: 7rem;
@@ -202,30 +283,41 @@ h2 {
       label,
       span {
         font-size: 1.4rem;
+        margin: 0;
+        line-height: 1.8;
       }
       span {
         position: absolute;
         left: 7rem;
         z-index: -1;
-
-        &:after {
-          content: "";
-          position: absolute;
-          width: 8px;
-          height: 2rem;
-          background: $dark-grey;
-          opacity: 0;
-        }
-        &.focus {
+      }
+      &.focus {
+        span {
           &:after {
             animation: blink 1s infinite;
           }
         }
       }
+
+      &:hover,
+      &.focus {
+        &::after {
+          opacity: 1;
+        }
+      }
+      textarea {
+        height: 40px;
+      }
       .write {
         width: 50%;
         font-size: 1.4rem;
-        opacity: 0;
+        border: none;
+        background: none;
+        border-bottom: 1px solid $dark-grey;
+        &:focus {
+          background-color: $light-grey;
+          outline: none;
+        }
       }
     }
   }

@@ -1,7 +1,19 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import database from '../data/Database'
+import TypeIt from "typeit";
 
 export default function Projects() {
+    useEffect(() => {
+        
+        new TypeIt("#new-projects", {
+            strings: ['my new project: { stack: anything! }'],
+            speed: 155,
+            loop: true,
+            waitUntilVisible: true
+          }).go();
+    }, [])
+
+
     return (
         <div className='container-lg code-sandbox'>
 
@@ -13,24 +25,33 @@ export default function Projects() {
                     <p key={project.id}>
                         <span><strong className='line'>{project.title}{`:{`}</strong></span>
                         <br></br>
-                        <span className='line ind-1'>info: '{project.info}'</span>
+                        <span className='line ind-1'>
+                            <span className='code-blue'>info: </span> 
+                            '{project.info}'
+                        </span>
                         <br></br>
                         <span className='ind-1 stack'>stack: [
                             {project.stack.map((el, idx) => (
-                                <span key={idx}>{` ${el} `}</span>
+                                <span className='code-pink' key={idx}>{` ${el} `}</span>
                             ))}
                         ]
                         </span>
                         <br></br>
 
                         {project.img ? 
-                        <span className='line ind-1 img-container'>img: [
-                            {project.img.map((image, idx) => (
-                                <span className='single-img' key={idx}>
-                                    <span>{` image `}</span>
-                                    <img src={image}/>
-                                </span>
-                            ))}
+                        <span className='line ind-1 img-container'>
+                            <span className='code-green'>img:</span> 
+                            [
+                            <span 
+                                onClick={() => console.log('focus')}
+                                
+                            >
+                                {project.img.map((image, idx) => (
+                                    <span className='single-img' key={idx}>
+                                        <span>{` image `}</span>
+                                    </span>
+                                ))}
+                            </span>
                         ]
                         <br></br>
                         </span>
@@ -60,7 +81,7 @@ export default function Projects() {
                         {project.url ? 
                         <span className='line ind-1 link-container'>
                             {`link: `}
-                            <a href={project.url}>url</a>
+                            <a className='code-el' href={project.url}>url</a>
                         </span>
                         :
                         ''
@@ -70,7 +91,12 @@ export default function Projects() {
                         <span className='line'>{`}`}</span>
                     </p>
                 ))}
+                <p>
+                    <span id='new-projects' className='line'>
+                    </span>
+                </p>
             </div>
+
 
 
             <h2>{`</projects>`}</h2>
