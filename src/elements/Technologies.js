@@ -6,7 +6,7 @@ import TypeIt from "typeit";
 export default function Technologies() {
 
     useEffect(() => {
-        
+        window.scrollTo(0, 0);
         new TypeIt("#about", {
             strings: database.about,
             speed: 65,

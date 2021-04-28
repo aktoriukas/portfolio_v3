@@ -1,12 +1,16 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import database from '../data/Database'
 import TypeIt from "typeit";
+import Carousel from './Carousel'
 
 export default function Projects() {
+
+    const [carousel, setCarousel] = useState(false)
+
     useEffect(() => {
         
         new TypeIt("#new-projects", {
-            strings: ['my new project: { stack: anything! }'],
+            strings: ['project: { stack: anything! }'],
             speed: 155,
             loop: true,
             waitUntilVisible: true
@@ -40,19 +44,18 @@ export default function Projects() {
 
                         {project.img ? 
                         <span className='line ind-1 img-container'>
-                            <span className='code-green'>img:</span> 
+                            <span className='code-green'>img: </span> 
                             [
-                            <span 
-                                onClick={() => console.log('focus')}
-                                
-                            >
                                 {project.img.map((image, idx) => (
-                                    <span className='single-img' key={idx}>
+                                    <span 
+                                    onClick={() => setCarousel(project.img)}
+                                    className='single-img' 
+                                    key={idx}>
                                         <span>{` image `}</span>
                                     </span>
                                 ))}
-                            </span>
-                        ]
+                            ]
+                            
                         <br></br>
                         </span>
 
@@ -63,15 +66,14 @@ export default function Projects() {
                         {project.video ? 
                         <span className='line ind-1 video-container'>vid: [
                             {project.video.map((vid, idx) => (
-                                <span className='single-video' key={idx}>
+                                <span 
+                                    onClick={() => setCarousel(project.video)}
+                                    className='single-video' key={idx}>
                                     <span>{` video `}</span>
-                                    <video playsInline autoPlay loop>
-                                        <source src={vid} type='video/mp4'/>
-                                    </video>
                                 </span>
                             ))}
                         ]
-                        <br></br>
+                        <br></br>var
                         </span>
 
                         :
@@ -81,7 +83,7 @@ export default function Projects() {
                         {project.url ? 
                         <span className='line ind-1 link-container'>
                             {`link: `}
-                            <a className='code-el' href={project.url}>url</a>
+                            <a target="_blank" className='code-el' href={project.url}>url</a>
                         </span>
                         :
                         ''
@@ -97,7 +99,7 @@ export default function Projects() {
                 </p>
             </div>
 
-
+            {carousel ? <Carousel data={carousel} setCarousel={setCarousel} /> : ''}
 
             <h2>{`</projects>`}</h2>
             

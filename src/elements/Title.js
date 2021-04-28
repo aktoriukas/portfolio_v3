@@ -6,18 +6,17 @@ export default function Title() {
     useEffect(() => {
         
         new TypeIt("#hello", {
-            speed: 65,
+            speed: 95,
             loop: false,
-            waitUntilVisible: true
+            waitUntilVisible: false
           }).go();
     }, [])
 
     return (
         <div className='container-lg welcome-page'>
             <h1 id='hello'>
-                Hi, <br></br>
-                I'm Gediminas,<br></br>
-                Web Developer
+                Hi,
+                my name is Gediminas
             </h1>
         </div>
     )

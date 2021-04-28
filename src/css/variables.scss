@@ -46,3 +46,25 @@ $code-el: #36af90;
     opacity: 1;
   }
 }
+@keyframes rotate {
+  0% {
+    transform: rotate(35deg);
+  }
+  50% {
+    transform: rotate(350deg);
+  }
+  100% {
+    transform: rotate(35deg);
+  }
+}
+@keyframes welcome {
+  0% {
+    transform: scale(0) rotate(200deg);
+  }
+  50% {
+    transform: scale(0.5) rotate(150deg);
+  }
+  100% {
+    transform: scale(1) rotate(15deg);
+  }
+}
